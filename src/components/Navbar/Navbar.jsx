@@ -4,6 +4,7 @@ export default function Navbar() {
   return (
    <nav className="nav">
       <h1 className="nav__heading">Jmik Thang</h1>
+      <p>Available</p>
       <li className="nav__links">
             <a className="nav__link" href="about">About</a>
             <a className="nav__link" href="project">Projects</a>
