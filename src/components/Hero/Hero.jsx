@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar";
-import img from "../About/About";
+import img from "../../assets/about.jpg";
 import "./Hero.css";
 
 const Hero = () => {
@@ -18,8 +18,10 @@ const Hero = () => {
             <button className="hero__button">Learn More</button>
           </div>
         </div>
-        <img src={img} alt="" />
+        <img className="hero__content-img" src={img} alt="hero image" />
+    
       </div>
+   
     </section>
   );
 };
