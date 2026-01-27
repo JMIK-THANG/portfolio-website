@@ -1,8 +1,6 @@
 import React from "react";
-import Navbar from "../Navbar/Navbar";
-import img from "../../assets/about.jpg";
-
-import "./Hero.css";
+import Navbar from "./Navbar";
+import img from "../assets/about.jpg";
 
 const Hero = () => {
   return (
@@ -17,7 +15,6 @@ const Hero = () => {
               Full-stack developer who loves clean design and clean code. I
               build fast, simple, and meaningful web applications.
             </p>
-
           </div>
         </div>
 

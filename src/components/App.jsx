@@ -1,16 +1,16 @@
 import { Routes, Route } from "react-router-dom";
-import Navbar from "../Navbar/Navbar";
-import Hero from "../Hero/Hero";
-import About from "../About/About";
-import Projects from "../Projects/Projects";
-import Contact from "../Contact/Contact";
-import Footer from "../Footer/Footer";
+import Navbar from "./Navbar";
+import Hero from "./Hero";
+import About from "./About";
+// import Projects from "./Projects";
+import Contact from "./Contact";
+import Footer from "./Footer";
 
 function App() {
   return (
     <>
       <Navbar />
-      
+
       <Routes>
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Hero />} />
