@@ -5,7 +5,9 @@ import slowJamzImg from "../assets/slow-jamz.png";
 import emergencyConnectImg from "../assets/emergency-connect.png";
 import ProjectCard from "./ProjectCard";
 import EducationCard from "./EducationCard";
+import SkillsSection from "./skillsSection";
 import scWorkReadyImg from "../assets/sc-work-ready.jpg";
+import tripletenImg from "../assets/tripleten-certificate.jpg";
 
 
 
@@ -122,33 +124,11 @@ const About = () => {
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
            <EducationCard
-    title="TripleTen"
-    subtitle="Software Engineering Certificate"
-    date="Sep 2025"
-    description="Completed an intensive full-stack software engineering program focused on real-world projects, collaboration, and modern web development."
-    linkLabel="View Certificate"
-    linkHref="/certificates/tripleten.pdf"
-    skills={[
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Git",
-      "GitHub",
-      "Google Cloud",
-    ]}
-  />
-
-          <EducationCard
-  title="South Carolina Work Credential"
+  title="TripleTen"
   subtitle="Software Engineering Certificate"
   date="Sep 2025"
   description="Completed an intensive full-stack software engineering program focused on real-world projects, collaboration, and modern web development."
-  linkLabel="View Certificate"
-  linkHref={scWorkReadyImg}
+  image={tripletenImg}
   skills={[
     "HTML",
     "CSS",
@@ -163,7 +143,21 @@ const About = () => {
   ]}
 />
 
+<EducationCard
+  title="South Carolina Work Credential"
+  subtitle="Workplace Readiness Certificate"
+  date="Sep 2025"
+  description="Credential earned for demonstrating essential workplace readiness and professional skills."
+  image={scWorkReadyImg}
+  skills={[
+    "Employability Skills",
+    "Professionalism",
+    "Communication",
+    "Workplace Readiness",
+  ]}
+/>
           </div>
+<SkillsSection/>
 
           {/* Fancy All Projects button */}
           <div className="mt-12 flex justify-center">
