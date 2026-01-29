@@ -79,22 +79,12 @@ const EducationCard = ({
               <X className="h-5 w-5" />
             </button>
 
-            {/* PDF or IMAGE */}
-            {image?.endsWith(".pdf") ? (
-              <iframe
-                src={image}
-                title={title}
-                className="w-full h-full rounded-2xl"
-              />
-            ) : (
-              <img
-                src={image}
-                alt={title}
-                className="w-full h-full object-contain rounded-2xl"
-              />
-            )}
+            <img
+              src={image}
+              alt={title}
+              className="w-full h-full object-contain rounded-2xl"
+            />
           </div>
-          
         </div>
       )}
     </>

@@ -76,7 +76,9 @@ const ProjectCard = ({
           GitHub <Github className="h-4 w-4" />
         </a>
       </div>
+      
     </div>
+    
   );
 };
 

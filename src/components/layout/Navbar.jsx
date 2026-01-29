@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Github } from "lucide-react";
-import img from "../assets/navbar-img.png";
+import img from "../../assets/navbar-img.png";
 
 const linkBase =
   "text-white/80 hover:text-white transition-colors duration-200";
