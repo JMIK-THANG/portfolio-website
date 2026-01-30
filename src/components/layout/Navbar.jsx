@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
-import { Github } from "lucide-react";
 import img from "../../assets/navbar-img.png";
 
 const linkBase =
@@ -9,6 +7,7 @@ const linkActive = "text-white";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [activeId, setActiveId] = useState("home");
 
   useEffect(() => {
     const onResize = () => {
@@ -18,12 +17,48 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
+  // Optional: highlight active section while scrolling
+  useEffect(() => {
+    const ids = ["home", "about", "skills", "projects", "contact"];
+    const sections = ids
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort(
+            (a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0),
+          )[0];
+
+        if (visible?.target?.id) setActiveId(visible.target.id);
+      },
+      { root: null, threshold: 0.3 },
+    );
+
+    sections.forEach((sec) => observer.observe(sec));
+    return () => observer.disconnect();
+  }, []);
+
+  const NavItem = ({ href, id, children, onClick, className = "" }) => (
+    <a
+      href={href}
+      onClick={onClick}
+      className={`${linkBase} ${activeId === id ? linkActive : ""} ${className}`}
+    >
+      {children}
+    </a>
+  );
+
   return (
-    <header className="sticky top-0 z-50 bg-black/90 backdrop-blur border-b border-white/10">
+    <header className="top-0 z-50 bg-black/90 backdrop-blur border-b border-white/10">
       <nav className="mx-auto max-w-6xl px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Left */}
-          <div className="flex items-center gap-4">
+          <a href="#home" className="flex items-center gap-4">
             <div>
               <h1 className="text-lg md:text-xl font-semibold text-white">
                 Jmik Thang
@@ -33,53 +68,43 @@ export default function Navbar() {
                 <span>Available</span>
               </div>
             </div>
-          </div>
+          </a>
 
           {/* Desktop links */}
           <ul className="hidden md:flex items-center gap-6 text-sm font-medium">
             <li>
-              <NavLink
-                to="/about"
-                className={({ isActive }) =>
-                  `${linkBase} ${isActive ? linkActive : ""}`
-                }
-              >
+              <NavItem href="#home" id="about">
                 About
-              </NavLink>
+              </NavItem>
             </li>
             <li>
-              <NavLink
-                to="/projects"
-                className={({ isActive }) =>
-                  `${linkBase} ${isActive ? linkActive : ""}`
-                }
-              >
+              <NavItem href="#all-projects" id="all-projects">
                 Projects
-              </NavLink>
+              </NavItem>
             </li>
             <li>
-              <NavLink
-                to="/contact"
-                className={({ isActive }) =>
-                  `${linkBase} ${isActive ? linkActive : ""}`
-                }
-              >
+              <NavItem href="#contact" id="contact">
                 Contact
-              </NavLink>
+              </NavItem>
             </li>
           </ul>
 
           {/* Right */}
           <div className="flex items-center gap-3">
-
-
-            {/* Avatar */}
-            <img
+            <a
+              href="https://github.com/JMIK-THANG"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 hover:bg-white/10 hover:text-white transition"
+              aria-label="GitHub profile"
+            > <img
               className="h-9 w-9 rounded-full object-cover ring-1 ring-white/10"
               src={img}
               alt="profile"
-            />
+            /></a>
 
+            {/* Avatar */}
+           
             {/* Hamburger */}
             <button
               type="button"
@@ -115,50 +140,37 @@ export default function Navbar() {
         {/* Mobile menu */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ${
-            open ? "max-h-64 opacity-100 mt-4" : "max-h-0 opacity-0"
+            open ? "max-h-72 opacity-100 mt-4" : "max-h-0 opacity-0"
           }`}
         >
           <ul className="rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur">
             <li>
-              <NavLink
-                to="/about"
+              <a
+                href="#about"
                 onClick={() => setOpen(false)}
                 className="block rounded-xl px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white transition"
               >
                 About
-              </NavLink>
+              </a>
             </li>
 
             <li className="mt-1">
-              <NavLink
-                to="/projects"
+              <a
+                href="#projects"
                 onClick={() => setOpen(false)}
                 className="block rounded-xl px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white transition"
               >
                 Projects
-              </NavLink>
+              </a>
             </li>
 
             <li className="mt-1">
-              <NavLink
-                to="/contact"
+              <a
+                href="#contact"
                 onClick={() => setOpen(false)}
                 className="block rounded-xl px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white transition"
               >
                 Contact
-              </NavLink>
-            </li>
-
-            {/* Mobile GitHub link */}
-            <li className="mt-2">
-              <a
-                href="https://github.com/JMIK-THANG"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white transition"
-              >
-                <Github className="h-4 w-4" />
-                GitHub
               </a>
             </li>
           </ul>

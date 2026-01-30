@@ -1,24 +1,25 @@
-import { Routes, Route } from "react-router-dom";
+import React from "react";
+
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-import About from "./components/sections/About";
-import Projects from "./components/sections/Projects";
+
+// sections (one-page)
+import Main from "./components/sections/Main";
 import Contact from "./components/sections/Contact";
 
-function App() {
+export default function App() {
   return (
     <>
       <Navbar />
-
-      <Routes>
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-
+      <main>
+        <section id="home">
+          <Main />
+        </section>
+        <section id="contact" className="scroll-mt-28">
+          <Contact />
+        </section>
+      </main>
       <Footer />
     </>
   );
 }
-
-export default App;

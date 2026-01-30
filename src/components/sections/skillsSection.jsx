@@ -1,76 +1,83 @@
 import React from "react";
 import { SKILL_GROUPS } from "../../data/skills.js";
 
+const BORDER_BY_TITLE = {
+  "Front-End": "border-emerald-400/30",
+  "Back-End": "border-sky-400/30",
+  Database: "border-violet-400/30",
+  "Tools & Workflow": "border-amber-400/30",
+};
+
+const ACCENT_BY_TITLE = {
+  "Front-End": "bg-emerald-400/60",
+  "Back-End": "bg-sky-400/60",
+  Database: "bg-violet-400/60",
+  "Tools & Workflow": "bg-amber-400/60",
+};
+
 export default function SkillsSection() {
   return (
-    <section className="mt-12">
-      {/* Outer wrapper: simple but nice background */}
-      <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 via-white/[0.03] to-transparent p-6 md:p-8">
-        {/* subtle top highlight (simple background) */}
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_50%_at_50%_0%,rgba(255,255,255,0.10),transparent_60%)]" />
-
+    <section id="skills" className="mt-20 scroll-mt-28">
+      <div className="mx-auto max-w-6xl px-4">
         {/* Header */}
-        <div className="relative text-center md:text-left">
+        <div className="mb-10">
           <p className="text-sm tracking-[0.25em] text-white/60">SKILLS</p>
           <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-white">
             Full-Stack Toolkit
           </h2>
-          <p className="mt-3 text-white/65 max-w-3xl leading-relaxed md:mx-0 mx-auto">
-            Clean UI on the front, secure APIs on the back. I focus on shipping
-            reliable features with maintainable code and thoughtful UX.
+          <p className="mt-3 max-w-3xl text-white/70 leading-relaxed">
+            Organized by category — one skill per line for easy scanning.
           </p>
         </div>
 
-        {/* One main card holding ALL categories */}
-        <div className="relative mt-8">
-          {/* Fancy border using gradient ring */}
-          <div className="rounded-3xl bg-gradient-to-r from-white/20 via-white/10 to-white/20 p-[1px]">
-            <div className="rounded-3xl border border-white/10 bg-black/40 backdrop-blur p-6 md:p-7">
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                {SKILL_GROUPS.map((group) => {
-                  const Icon = group.icon;
-                  return (
-                    <div key={group.title} className="min-w-0">
-                      {/* Category title */}
-                      <div className="flex items-center gap-2">
-                        <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5">
-                          <Icon className="h-5 w-5 text-white/80" />
-                        </span>
-                        <h3 className="text-sm font-semibold text-white">
-                          {group.title}
-                        </h3>
-                      </div>
+        {/* 4-column grid */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {SKILL_GROUPS.map((group) => {
+            const Icon = group.icon;
+            const border = BORDER_BY_TITLE[group.title] ?? "border-white/15";
+            const accent = ACCENT_BY_TITLE[group.title] ?? "bg-white/40";
 
-                      {/* Skills chips */}
-                      <div className="mt-3 flex flex-wrap gap-2">
-                        {group.items.map((item) => (
-                          <span
-                            key={item}
-                            className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80 hover:bg-white/10 transition"
-                          >
-                            {item}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  );
-                })}
+            return (
+              <div
+                key={group.title}
+                className={`rounded-3xl border ${border} bg-black/40 p-5 backdrop-blur`}
+              >
+                {/* Title */}
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5">
+                    <Icon className="h-5 w-5 text-white/80" />
+                  </span>
+                  <h3 className="text-sm font-semibold text-white">
+                    {group.title}
+                  </h3>
+                </div>
+
+                {/* Accent line (fixed) */}
+                <div className={`mt-4 h-1 w-10 rounded-full ${accent}`} />
+
+                {/* Skills list (1 row = 1 skill) */}
+                <ul className="mt-4 space-y-2">
+                  {group.items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-2 text-sm text-white/80"
+                    >
+                      <span className="h-1.5 w-1.5 rounded-full bg-white/40" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
+            );
+          })}
+        </div>
 
-              {/* Bottom mini line (simple, premium) */}
-              <div className="mt-6 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-              {/* Small note row */}
-              <div className="mt-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                <p className="text-sm text-white/65">
-                  Currently building: portfolio polish + full-stack features (auth, profiles, clean UI).
-                </p>
-                <span className="inline-flex w-fit items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70">
-                  React • Node • REST • MongoDB
-                </span>
-              </div>
-            </div>
-          </div>
+        {/* Footer note */}
+        <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 px-6 py-4">
+          <p className="text-sm text-white/65">
+            Focused on fundamentals, clean structure, and building full-stack
+            features end to end.
+          </p>
         </div>
       </div>
     </section>
