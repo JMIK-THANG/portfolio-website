@@ -156,7 +156,7 @@ export default function Navbar() {
 
             <li className="mt-1">
               <a
-                href="#projects"
+                href="#featured-projects"
                 onClick={() => setOpen(false)}
                 className="block rounded-xl px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white transition"
               >

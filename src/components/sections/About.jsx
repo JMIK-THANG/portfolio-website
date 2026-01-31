@@ -13,7 +13,7 @@ import img from "../../assets/about.jpg";
 
 export default function AboutIntro() {
   return (
-    <section className="bg-black text-white px-4 py-16 sm:py-20 md:py-28 scroll-mt-28">
+    <section id="about-me" className="bg-black text-white px-4 py-16 sm:py-20 md:py-28 scroll-mt-28">
       <div className="mx-auto max-w-6xl">
         {/* ===== TOP ROW: TEXT LEFT / IMAGE RIGHT ===== */}
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
