@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import img from "../../assets/navbar-img.png";
 
 const linkBase =
@@ -54,40 +55,39 @@ export default function Navbar() {
   );
 
   return (
-    <header className="top-0 z-50 bg-black/90 backdrop-blur border-b border-white/10">
+    <header className="sticky top-0 z-50 bg-black/90 backdrop-blur border-b border-white/10">
       <nav className="mx-auto max-w-6xl px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Left */}
-          <a href="#home" className="flex items-center gap-4">
+          <a href="#hero" className="flex items-center gap-4">
             <div>
               <h1 className="text-lg md:text-xl font-semibold text-white">
                 Jmik Thang
               </h1>
-              <div className="mt-0.5 flex items-center gap-2 text-xs text-white/70">
-                <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.9)]" />
-                <span>Available</span>
-              </div>
+            
             </div>
           </a>
 
+       
           {/* Desktop links */}
-          <ul className="hidden md:flex items-center gap-6 text-sm font-medium">
-            <li>
-              <NavItem href="#home" id="about">
-                About
-              </NavItem>
-            </li>
-            <li>
-              <NavItem href="#all-projects" id="all-projects">
-                Projects
-              </NavItem>
-            </li>
-            <li>
-              <NavItem href="#contact" id="contact">
-                Contact
-              </NavItem>
-            </li>
-          </ul>
+<ul className="hidden md:flex items-center gap-6 text-sm font-medium">
+  <li>
+    <NavItem href="#about-me" id="about-me">
+      About
+    </NavItem>
+  </li>
+  <li>
+    <NavItem href="#featured-projects" id="featured-projects">
+      Projects
+    </NavItem>
+  </li>
+  <li>
+    <NavItem href="#contact" id="contact">
+      Contact
+    </NavItem>
+  </li>
+</ul>
+
 
           {/* Right */}
           <div className="flex items-center gap-3">
@@ -146,7 +146,7 @@ export default function Navbar() {
           <ul className="rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur">
             <li>
               <a
-                href="#about"
+                href="#about-me"
                 onClick={() => setOpen(false)}
                 className="block rounded-xl px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white transition"
               >

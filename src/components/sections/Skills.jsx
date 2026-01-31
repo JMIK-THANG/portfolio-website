@@ -17,7 +17,7 @@ const ACCENT_BY_TITLE = {
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="mt-20 scroll-mt-28">
+    <section id="skills" className=" py-20 scroll-mt-28 bg-black">
       <div className="mx-auto max-w-6xl px-4">
         {/* Header */}
         <div className="mb-10">
@@ -72,13 +72,7 @@ export default function SkillsSection() {
           })}
         </div>
 
-        {/* Footer note */}
-        <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 px-6 py-4">
-          <p className="text-sm text-white/65">
-            Focused on fundamentals, clean structure, and building full-stack
-            features end to end.
-          </p>
-        </div>
+       
       </div>
     </section>
   );
