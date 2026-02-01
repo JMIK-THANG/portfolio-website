@@ -1,30 +1,73 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [showTitle, setShowTitle] = useState(false);
+  const [showLabel, setShowLabel] = useState(false);
+  const [showRest, setShowRest] = useState(false);
+
+  useEffect(() => {
+    const t1 = setTimeout(() => setShowTitle(true), 250);
+    const t2 = setTimeout(() => setShowLabel(true), 1100);
+    const t3 = setTimeout(() => setShowRest(true), 1900);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+    };
+  }, []);
+
+  const smoothEase = "ease-[cubic-bezier(0.16,1,0.3,1)]";
+
   return (
-    <>
-      <section
-        id="hero"
-        className="bg-black text-white
-   bg-black text-white
-    px-4
-    pt-20 pb-14
-    sm:pt-24 sm:pb-16
-    md:pt-28 md:pb-16
-    md:min-h-[85vh]
-    flex items-center"
-      >
-        <div className="mx-auto w-full max-w-4xl text-center md:text-center">
-          {/* Top label */}
-          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs tracking-[0.25em] text-white/70">
-            <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
-            FULL-STACK DEVELOPER
-          </div>
+    <section
+      id="hero"
+      className="bg-black text-white px-4 pt-20 pb-14 sm:pt-24 sm:pb-16 md:pt-28 md:pb-16 md:min-h-[85vh] flex items-center"
+    >
+      <div className="mx-auto w-full max-w-4xl text-center">
 
-          <h1 className="mt-6 text-4xl md:text-6xl font-semibold leading-tight">
-            Hey, I&apos;m <span className="text-white">Jmik</span>
-          </h1>
+        {/* Label (2nd) */}
+        <div
+          className={[
+            "mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs tracking-[0.25em] text-white/70",
+            "will-change-transform will-change-opacity",
+            "transition-transform transition-opacity duration-[1400ms]",
+            smoothEase,
+            showLabel
+              ? "opacity-100 translate-y-0 scale-100"
+              : "opacity-0 translate-y-3 scale-[0.94]",
+          ].join(" ")}
+        >
+          <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
+          FULL-STACK DEVELOPER
+        </div>
 
+        {/* Title (1st) */}
+        <h1
+          className={[
+            "mt-6 text-4xl md:text-6xl font-semibold leading-tight",
+            "will-change-transform will-change-opacity",
+            "transition-transform transition-opacity duration-[1600ms]",
+            smoothEase,
+            showTitle
+              ? "opacity-100 translate-y-0 scale-100"
+              : "opacity-0 translate-y-5 scale-[0.92]",
+          ].join(" ")}
+        >
+          Hey, I&apos;m <span className="text-white">Jmik</span>
+        </h1>
+
+        {/* Rest (3rd) */}
+        <div
+          className={[
+            "will-change-transform will-change-opacity",
+            "transition-transform transition-opacity duration-[1200ms]",
+            smoothEase,
+            showRest ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+          ].join(" ")}
+        >
           <p className="mt-4 text-lg md:text-2xl text-white/80">
             I build clean, responsive web apps.
           </p>
@@ -59,8 +102,9 @@ const Hero = () => {
             <span>Open to Remote & Relocation</span>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
+
 export default Hero;

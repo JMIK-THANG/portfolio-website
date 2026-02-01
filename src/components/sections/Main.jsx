@@ -9,6 +9,8 @@ import Hero from "./Hero.jsx";
 import FeaturedProjects from "./FeaturedProjects";
 import Contact from "./Contact";
 
+
+
 const Main = () => {
   return (
     <>
