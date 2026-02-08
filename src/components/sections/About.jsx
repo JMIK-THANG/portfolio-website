@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  MapPin,
   Code2,
   Server,
   BadgeCheck,
