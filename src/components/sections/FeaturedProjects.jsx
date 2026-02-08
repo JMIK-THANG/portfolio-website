@@ -7,7 +7,7 @@ const FeaturedProjects = () => {
   return (
     <>
          {/* ===== FEATURED PROJECTS ===== */}
-      <section id="featured-projects" className="bg-zinc-950 py-20 px-4">
+      <section id="featured-projects" className="bg-zinc-950 py-20 px-4 pt-24">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="text-sm tracking-[0.25em] text-white/60">FEATURED</p>
