@@ -112,16 +112,6 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 72px; /* adjust if needed */
-}
-
-@media (min-width: 768px) {
-  html {
-    scroll-padding-top: 72px;
-  }
-}
 
 @layer base {
   * {
