@@ -20,7 +20,7 @@ export default function Navbar() {
 
   // Optional: highlight active section while scrolling
   useEffect(() => {
-    const ids = ["home", "about", "skills", "projects", "contact"];
+    const ids = ["home", "about-me", "skills", "projects", "contact"];
     const sections = ids
       .map((id) => document.getElementById(id))
       .filter(Boolean);
@@ -55,7 +55,7 @@ export default function Navbar() {
   );
 
   return (
-    <header className="sticky top-0 z-50 bg-black/90 backdrop-blur border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur border-b border-white/10">
       <nav className="mx-auto max-w-6xl px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Left */}
