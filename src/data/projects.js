@@ -1,5 +1,11 @@
+// src/data/projects.js
 import slowJamzImg from "../assets/slow-jamz.png";
 import emergencyConnectImg from "../assets/emergency-connect.png";
+
+// ✅ Update these filenames to match your real asset names
+import winterVacationImg from "../assets/winter-vacation.jpeg";
+import aroundTheUsImg from "../assets/aroundtheus.jpeg";
+
 
 export const BOOTCAMP_PROJECTS = [
   {
@@ -11,6 +17,7 @@ export const BOOTCAMP_PROJECTS = [
     tech: ["JavaScript", "HTML/CSS", "Spotify", "UI/UX"],
     liveDemo: "https://jmik-thang.github.io/Lover-s-Slow-Jamz/",
     github: "https://github.com/JMIK-THANG/Lover-s-Slow-Jamz",
+    tag: "CodeJam",
   },
   {
     title: "Emergency Connect",
@@ -21,70 +28,31 @@ export const BOOTCAMP_PROJECTS = [
     tech: ["JavaScript", "HTML/CSS", "Responsive Design"],
     liveDemo: "https://johnwallacegerrard.github.io/Emergency_Connect/",
     github: "https://github.com/johnwallacegerrard/Emergency_Connect",
+    tag: "CodeJam",
   },
 ];
 
-
-
 export const ALL_PROJECTS = [
   {
-    title: "CodeJam Project Alpha",
-    badge: "CodeJam Award",
+    title: "Winter Vacation Spots",
+    badge: "Front-End Project",
     description:
-      "A team-built project focused on user experience and real-world problem solving. Placeholder description.",
-    image: slowJamzImg,
-    tech: ["JavaScript", "HTML/CSS", "UI/UX"],
-    liveDemo: "#",
-    github: "#",
+      "A responsive site that showcases winter travel destinations with clean layout and interactive UI.",
+    image: winterVacationImg,
+    tech: ["HTML", "CSS", "JavaScript", "Responsive UI"],
+    liveDemo: "https://jmik-thang.github.io/winter-vacation-spots/",
+    github: "https://github.com/JMIK-THANG/winter-vacation-spots",
+    tag: "Project",
   },
   {
-    title: "CodeJam Project Beta",
-    badge: "CodeJam Award",
+    title: "Around The US",
+    badge: "React Project",
     description:
-      "An interactive web project built during a collaborative coding challenge. Placeholder description.",
-    image: slowJamzImg,
-    tech: ["React", "Responsive Design"],
-    liveDemo: "#",
-    github: "#",
-  },
-  {
-    title: "CodeJam Project Gamma",
-    badge: "CodeJam Award",
-    description:
-      "A front-end focused project emphasizing layout, accessibility, and clean UI patterns.",
-    image: emergencyConnectImg,
-    tech: ["JavaScript", "CSS", "Accessibility"],
-    liveDemo: "#",
-    github: "#",
-  },
-  {
-    title: "CodeJam Project Delta",
-    badge: "CodeJam Award",
-    description:
-      "A responsive application prototype built to demonstrate teamwork and rapid iteration.",
-    image: emergencyConnectImg,
-    tech: ["React", "Tailwind CSS"],
-    liveDemo: "#",
-    github: "#",
-  },
-  {
-    title: "CodeJam Project Epsilon",
-    badge: "CodeJam Award",
-    description:
-      "A concept project showcasing component-based architecture and reusable UI elements.",
-    image: emergencyConnectImg,
-    tech: ["React", "Component Design"],
-    liveDemo: "#",
-    github: "#",
-  },
-  {
-    title: "CodeJam Project Zeta",
-    badge: "CodeJam Award",
-    description:
-      "A placeholder project card representing future builds and expanded functionality.",
-    image: slowJamzImg,
-    tech: ["JavaScript", "Web Fundamentals"],
-    liveDemo: "#",
-    github: "#",
+      "A React-based profile and photo gallery app with structured components and modern UI patterns.",
+    image: aroundTheUsImg,
+    tech: ["React", "JavaScript", "CSS", "Responsive Design"],
+    liveDemo: "https://jmik-thang.github.io/se_project_aroundtheus/",
+    github: "https://github.com/JMIK-THANG/se_project_aroundtheus",
+    tag: "Project",
   },
 ];
