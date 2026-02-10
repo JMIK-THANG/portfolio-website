@@ -24,7 +24,14 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="scroll-mt-24 bg-black text-white px-4  pt-39 pb-14 sm:pt-24 sm:pb-16 md:pt-28 md:pb-16 md:min-h-[85vh] flex items-center"
+      className="
+    scroll-mt-24
+    bg-black text-white
+    px-4
+    min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)]
+    pt-16 md:pt-20
+    flex items-center justify-center
+  "
     >
       <div className="mx-auto w-full max-w-4xl text-center">
         {/* Label (2nd) */}
