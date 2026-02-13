@@ -8,7 +8,6 @@ const AllProjects = () => {
       <section id="all-projects" className="bg-zinc-950 py-20 px-4 text-white">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
-            <p className="text-sm tracking-[0.25em] text-white/60">PROJECTS</p>
             <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-white">
               All Projects
             </h2>

@@ -9,7 +9,7 @@ export default function App() {
     <>
       <Navbar />
       <main>
-       <section><Main/></section>
+       <Main/>
       </main>
       <Footer />
     </>
