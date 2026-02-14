@@ -3,9 +3,8 @@ import slowJamzImg from "../assets/slow-jamz.png";
 import emergencyConnectImg from "../assets/emergency-connect.png";
 
 // ✅ Update these filenames to match your real asset names
-import winterVacationImg from "../assets/winter-vacation.jpeg";
-import aroundTheUsImg from "../assets/aroundtheus.jpeg";
-
+import winterVacationImg from "../assets/winter-vacation.jpg";
+import aroundTheUsImg from "../assets/aroundtheus.jpg";
 
 export const BOOTCAMP_PROJECTS = [
   {

@@ -22,10 +22,10 @@ const AllProjects = () => {
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {ALL_PROJECTS.map((project) => (
             <ProjectCard
-              key={project.title}
-              {...project}
-              variant="all"       // 👈 different button style
-              showAward={false}   // 👈 hide trophy + CodeJam pill
+            key={project.title}
+            {...project}
+            variant="all"       // 👈 different button style
+            showAward={false}   // 👈 hide trophy + CodeJam pill
             />
           ))}
         </div>
