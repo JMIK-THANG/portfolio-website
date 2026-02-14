@@ -7,21 +7,20 @@ const FeaturedProjects = () => {
   return (
     <section
       id="featured-projects"
-      className="bg-zinc-950 py-20 px-4 pt-24"
+      className="bg-slate-950
+ py-20 px-4 pt-24"
     >
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
-          <p className="text-sm tracking-[0.25em] text-white/60">
-            FEATURED
-          </p>
+          <p className="text-sm tracking-[0.25em] text-white/60">FEATURED</p>
 
           <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-white">
             CodeJam Awards
           </h2>
 
           <p className="mt-3 max-w-2xl mx-auto text-white/65">
-            Two team-built projects recognized during bootcamp CodeJam—
-            focused on user experience and real-world problem solving.
+            Two team-built projects recognized during bootcamp CodeJam— focused
+            on user experience and real-world problem solving.
           </p>
         </div>
 

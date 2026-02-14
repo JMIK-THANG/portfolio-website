@@ -4,7 +4,8 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-black text-white px-4 py-16 md:py-24 sm:py-24"
+      className="bg-slate-950
+ text-white px-4 py-16 md:py-24 sm:py-24"
     >
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-12 md:grid-cols-2 items-center">

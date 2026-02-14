@@ -26,11 +26,9 @@ const Hero = () => {
       id="hero"
       className="
     scroll-mt-24
-    bg-black text-white
-    px-4
-    min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)]
-    pt-16 md:pt-20
-    flex items-center justify-center
+    bg-slate-950
+ text-white
+   min-h-screen flex items-center justify-center
   "
     >
       <div className="mx-auto w-full max-w-4xl text-center">

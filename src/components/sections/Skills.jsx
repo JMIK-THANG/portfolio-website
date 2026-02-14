@@ -17,7 +17,8 @@ const ACCENT_BY_TITLE = {
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className=" py-20 scroll-mt-28 bg-black">
+    <section id="skills" className=" py-20 scroll-mt-28 bg-slate-900
+">
       <div className="mx-auto max-w-6xl px-4">
         {/* Header */}
         <div className="mb-10">
