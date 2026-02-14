@@ -93,7 +93,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="#projects"
+              href="#featured-projects"
               className="w-full sm:w-auto rounded-2xl bg-white px-7 py-3 text-sm font-semibold text-black hover:bg-white/90 transition"
             >
               View Projects
