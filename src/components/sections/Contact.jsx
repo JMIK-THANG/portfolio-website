@@ -4,115 +4,77 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-slate-950 text-white px-4 py-16 sm:py-20 md:py-24"
+      className="bg-slate-950 text-white px-4 py-16 sm:py-20"
     >
-      <div className="mx-auto max-w-6xl">
-        <div className="grid gap-12 md:grid-cols-2 md:items-start">
-          {/* Left: Text */}
-          <div className="md:pt-2">
-            <p className="text-xs tracking-[0.35em] uppercase text-white/60">
-              Contact
-            </p>
+      <div className="mx-auto max-w-xl">
+        {/* Center header */}
+        <div className="text-center pt-4">
+          <p className="text-xs tracking-[0.35em] uppercase text-white/60">
+            Contact
+          </p>
+        </div>
 
-            <h2 className="mt-3 text-3xl md:text-4xl font-semibold leading-tight">
-              Let’s build something together.
-            </h2>
-
-            <p className="mt-5 text-white/70 leading-relaxed max-w-prose">
-              Have a project in mind, a question, or just want to say hello?
-              I’m open to new ideas, freelance work, or full-time opportunities.
-              Send a message and I’ll get back to you as soon as I can.
-            </p>
-
-            {/* Contact lines */}
-            <div className="mt-8 space-y-3 text-sm">
-              <div className="flex items-center gap-3 text-white/70">
-                <span className="inline-block h-2 w-2 rounded-full bg-white/40" />
-                <span className="text-white/60">Email:</span>
-                <a
-                  href="mailto:jmikthang5@gmail.com"
-                  className="text-white underline underline-offset-4 hover:text-white/90 transition"
-                >
-                  jmikthang5@gmail.com
-                </a>
-              </div>
-
-              {/* Optional: add more contact methods later */}
-              {/* <div className="flex items-center gap-3 text-white/70">
-                <span className="inline-block h-2 w-2 rounded-full bg-white/40" />
-                <span className="text-white/60">Location:</span>
-                <span>New York, NY</span>
-              </div> */}
+        {/* Form (stacked + centered) */}
+        <form
+          onSubmit={(e) => e.preventDefault()}
+          className="mt-10 rounded-3xl border border-white/10 bg-white/5 backdrop-blur p-6 sm:p-8"
+        >
+          <div className="grid gap-4">
+            <div>
+              <label className="block text-sm text-white/70 mb-1">Email</label>
+              <input
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                required
+                className="w-full rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-white
+                           placeholder:text-white/35 outline-none transition
+                           focus:border-white/30 focus:ring-2 focus:ring-white/20"
+              />
             </div>
-          </div>
 
-          {/* Right: Form */}
-          <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur p-6 sm:p-7 md:p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.03)]">
-            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-              <div className="space-y-1">
-                <h3 className="text-lg font-semibold">Send a message</h3>
-                <p className="text-sm text-white/60">
-                  Quick note is perfect — I’ll reply soon.
-                </p>
-              </div>
+            <div>
+              <label className="block text-sm text-white/70 mb-1">
+                Message
+              </label>
+              <textarea
+                name="message"
+                rows={5}
+                placeholder="Your message..."
+                required
+                className="w-full rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-white
+                           placeholder:text-white/35 outline-none transition resize-none
+                           focus:border-white/30 focus:ring-2 focus:ring-white/20"
+              />
+            </div>
 
-              <div className="grid gap-4">
-               
+            {/* Fancy button */}
+            <button
+              type="submit"
+              className="group relative mt-2 inline-flex w-full items-center justify-center overflow-hidden rounded-2xl px-6 py-3 text-sm font-semibold text-slate-950"
+            >
+              {/* gradient bg */}
+              <span className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white" />
 
-                {/* Email */}
-                <div>
-                  <label className="block text-sm text-white/70 mb-1">
-                    Email
-                  </label>
-                  <input
-                    name="email"
-                    type="email"
-                    placeholder="you@example.com"
-                    required
-                    className="w-full rounded-xl border border-white/15 bg-black/30 px-4 py-3 text-white placeholder:text-white/35 outline-none transition
-                               focus:border-white/30 focus:ring-2 focus:ring-white/20"
-                  />
-                </div>
+              {/* glow */}
+              <span className="absolute -inset-1 opacity-0 blur-xl transition duration-300 group-hover:opacity-70 bg-white/30" />
 
-                {/* Message */}
-                <div>
-                  <label className="block text-sm text-white/70 mb-1">
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    rows={5}
-                    placeholder="Tell me about your idea..."
-                    required
-                    className="w-full rounded-xl border border-white/15 bg-black/30 px-4 py-3 text-white placeholder:text-white/35 outline-none transition resize-none
-                               focus:border-white/30 focus:ring-2 focus:ring-white/20"
-                  />
-                 
-                </div>
-              </div>
+              {/* shine sweep */}
+              <span className="absolute left-[-40%] top-0 h-full w-1/3 -skew-x-12 bg-white/40 opacity-0 transition duration-500 group-hover:left-[120%] group-hover:opacity-100" />
 
-              {/* Submit */}
-              <div className="pt-1 flex flex-col sm:flex-row sm:items-center gap-3">
-                <button
-                  type="submit"
-                  className="inline-flex w-full sm:w-auto items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-white
-                             hover:bg-white/90 active:bg-white/80 transition"
-                >
-                  Send Message
-                </button>
+              {/* border */}
+              <span className="absolute inset-0 rounded-2xl ring-1 ring-white/20" />
 
-                <span className="text-xs text-white/50">
-                  Or email me directly above.
+              {/* text */}
+              <span className="relative flex items-center gap-2">
+                Send
+                <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+                  →
                 </span>
-              </div>
-            </form>
+              </span>
+            </button>
           </div>
-        </div>
-
-        {/* Bottom divider (subtle) */}
-        <div className="mt-14 border-t border-white/10 pt-6 text-xs text-white/45">
-          © {new Date().getFullYear()} Jmik Thang. All rights reserved.
-        </div>
+        </form>
       </div>
     </section>
   );

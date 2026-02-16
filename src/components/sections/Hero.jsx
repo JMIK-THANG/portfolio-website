@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Navbar from "../layout/Navbar" // make sure path is correct
 
 const Hero = () => {
   const [showTitle, setShowTitle] = useState(false);
@@ -24,12 +25,12 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="scroll-mt-28
-    bg-slate-950 text-white min-h-[calc(100vh-60px)] flex items-center justify-center
-  "
+      className="bg-slate-950 text-white min-h-screen flex items-center justify-center relative"
     >
-      <div className="mx-auto w-full max-w-4xl text-center">
-        {/* Label (2nd) */}
+      <Navbar />
+
+      {/* add top padding if navbar is fixed */}
+      <div className="mx-auto w-full max-w-4xl text-center px-4 pt-24">
         <div
           className={[
             "mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs tracking-[0.25em] text-white/70",
@@ -45,7 +46,6 @@ const Hero = () => {
           FULL-STACK DEVELOPER
         </div>
 
-        {/* Title (1st) */}
         <h1
           className={[
             "mt-6 text-4xl md:text-6xl font-semibold leading-tight",
@@ -60,7 +60,6 @@ const Hero = () => {
           Hey, I&apos;m <span className="text-white">Jmik</span>
         </h1>
 
-        {/* Rest (3rd) */}
         <div
           className={[
             "will-change-transform will-change-opacity",

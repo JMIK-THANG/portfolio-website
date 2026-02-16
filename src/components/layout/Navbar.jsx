@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import img from "../../assets/navbar-img.png";
 
 const linkBase =
@@ -8,7 +7,8 @@ const linkActive = "text-white";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [activeId, setActiveId] = useState("home");
+  const [activeId, setActiveId] = useState("hero");
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onResize = () => {
@@ -18,9 +18,17 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  // Optional: highlight active section while scrolling
+  // ✅ detect scroll for background style
   useEffect(() => {
-    const ids = ["home", "about-me", "skills", "projects", "contact"];
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // ✅ highlight active section while scrolling (MATCH YOUR REAL IDS)
+  useEffect(() => {
+    const ids = ["hero", "about-me", "featured-projects", "contact"];
     const sections = ids
       .map((id) => document.getElementById(id))
       .filter(Boolean);
@@ -37,7 +45,7 @@ export default function Navbar() {
 
         if (visible?.target?.id) setActiveId(visible.target.id);
       },
-      { root: null, threshold: 0.3 },
+      { root: null, threshold: 0.35 },
     );
 
     sections.forEach((sec) => observer.observe(sec));
@@ -55,16 +63,22 @@ export default function Navbar() {
   );
 
   return (
-    <header className="z-50 bg-slate-900 backdrop-blur border-b border-white/10">
-      <nav className="mx-auto max-w-6xl px-4 py-3">
-        <div className="flex items-center justify-between">
+    <header
+      className={[
+        "fixed top-0 left-0 w-full z-50",
+        "transition-all duration-300",
+        scrolled
+          ? "bg-slate-950/20 backdrop-blur border-b border-white/10"
+          : "bg-transparent border-b border-transparent",
+      ].join(" ")}
+    >
+      <nav className="mx-auto max-w-6xl px-4 h-16 flex items-center">
+        <div className="flex w-full items-center justify-between">
           {/* Left */}
-          <a href="#" className="flex items-center gap-4">
-            <div>
-              <h1 className="text-lg md:text-xl font-semibold text-white">
-                Jmik Thang
-              </h1>
-            </div>
+          <a href="#hero" className="flex items-center gap-4">
+            <h1 className="text-lg md:text-xl font-semibold text-white">
+              Jmik Thang
+            </h1>
           </a>
 
           {/* Desktop links */}
@@ -84,7 +98,6 @@ export default function Navbar() {
                 Contact
               </NavItem>
             </li>
-            
           </ul>
 
           {/* Right */}
@@ -96,15 +109,12 @@ export default function Navbar() {
               className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/80 hover:bg-white/10 hover:text-white transition"
               aria-label="GitHub profile"
             >
-              {" "}
               <img
                 className="h-9 w-9 rounded-full object-cover ring-1 ring-white/10"
                 src={img}
                 alt="profile"
               />
             </a>
-
-            {/* Avatar */}
 
             {/* Hamburger */}
             <button
@@ -137,46 +147,46 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-
-        {/* Mobile menu */}
-        <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ${
-            open ? "max-h-72 opacity-100 mt-4" : "max-h-0 opacity-0"
-          }`}
-        >
-          <ul className="rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur">
-            <li>
-              <a
-                href="#about-me"
-                onClick={() => setOpen(false)}
-                className="block rounded-xl px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white transition"
-              >
-                About
-              </a>
-            </li>
-
-            <li className="mt-1">
-              <a
-                href="#featured-projects"
-                onClick={() => setOpen(false)}
-                className="block rounded-xl px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white transition"
-              >
-                Projects
-              </a>
-            </li>
-
-            <li className="mt-1">
-              <a
-                href="#contact"
-                onClick={() => setOpen(false)}
-                className="block rounded-xl px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white transition"
-              >
-                Contact 
-              </a>
-            </li>
-          </ul>
-        </div>
       </nav>
+
+      {/* Mobile menu */}
+      <div
+        className={`md:hidden px-4 overflow-hidden transition-all duration-300 ${
+          open ? "max-h-72 opacity-100 pb-4" : "max-h-0 opacity-0"
+        }`}
+      >
+        <ul className="rounded-2xl border border-white/10 bg-slate-950/70 backdrop-blur p-3">
+          <li>
+            <a
+              href="#about-me"
+              onClick={() => setOpen(false)}
+              className="block rounded-xl px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white transition"
+            >
+              About
+            </a>
+          </li>
+
+          <li className="mt-1">
+            <a
+              href="#featured-projects"
+              onClick={() => setOpen(false)}
+              className="block rounded-xl px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white transition"
+            >
+              Projects
+            </a>
+          </li>
+
+          <li className="mt-1">
+            <a
+              href="#contact"
+              onClick={() => setOpen(false)}
+              className="block rounded-xl px-4 py-3 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white transition"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
     </header>
   );
 }

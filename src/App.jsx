@@ -7,7 +7,7 @@ import Main from "./components/sections/Main"
 export default function App() {
   return (
     <>
-      <Navbar />
+     
       <main>
        <Main/>
       </main>
