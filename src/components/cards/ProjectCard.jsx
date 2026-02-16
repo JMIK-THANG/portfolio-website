@@ -22,7 +22,6 @@ export default function ProjectCard({
     variant === "featured"
       ? "bg-black/40 text-white border border-white/15 hover:bg-black/55 hover:border-white/25"
       : "bg-white/10 text-white border border-white/10 hover:bg-white/15";
-
   return (
     <div className="group rounded-3xl border border-white/10 bg-white/5 backdrop-blur p-5 md:p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:border-white/15 hover:shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
       
@@ -31,7 +30,7 @@ export default function ProjectCard({
           src={image}
           alt={title}
           className="h-48 w-full object-cover md:h-52 transition-transform duration-500 group-hover:scale-[1.02]"
-          loading="lazy"
+          loading="lazy"          
         />
       </div>
 

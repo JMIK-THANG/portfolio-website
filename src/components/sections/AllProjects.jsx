@@ -14,8 +14,7 @@ const AllProjects = () => {
             All Projects
           </h2>
           <p className="mt-3 max-w-2xl mx-auto text-white/65">
-            A collection of CodeJam and practice projects. More real-world
-            builds coming soon.
+            A collection of CodeJam and practice projects
           </p>
         </div>
 

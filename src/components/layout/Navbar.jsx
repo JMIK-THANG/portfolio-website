@@ -55,11 +55,11 @@ export default function Navbar() {
   );
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur border-b border-white/10">
+    <header className="z-50 bg-slate-900 backdrop-blur border-b border-white/10">
       <nav className="mx-auto max-w-6xl px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Left */}
-          <a href="#hero" className="flex items-center gap-4">
+          <a href="#" className="flex items-center gap-4">
             <div>
               <h1 className="text-lg md:text-xl font-semibold text-white">
                 Jmik Thang

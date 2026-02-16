@@ -24,11 +24,8 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="
-    scroll-mt-24
-    bg-slate-950
- text-white
-   min-h-screen flex items-center justify-center
+      className="scroll-mt-28
+    bg-slate-950 text-white min-h-[calc(100vh-60px)] flex items-center justify-center
   "
     >
       <div className="mx-auto w-full max-w-4xl text-center">
