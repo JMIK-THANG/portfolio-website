@@ -69,7 +69,7 @@ const Hero = () => {
           ].join(" ")}
         >
           <p className="mt-4 text-lg md:text-2xl text-white/80">
-            I build clean, responsive web apps.
+            I build high-performance, responsive web applications with precision.
           </p>
 
           <p className="mx-auto mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-white/65">

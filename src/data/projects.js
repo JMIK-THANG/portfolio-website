@@ -1,5 +1,5 @@
 // src/data/projects.js
-import slowJamzImg from "../assets/slow-jamz.png";
+import slowJamzImg from "../assets/slow-jamz.jpeg";
 import emergencyConnectImg from "../assets/emergency-connect.png";
 
 // ✅ Update these filenames to match your real asset names
