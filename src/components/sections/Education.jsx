@@ -16,7 +16,7 @@ const Education = () => {
               Certifications & Credentials
             </h2>
             <p className="mt-3 max-w-2xl mx-auto text-white/65">
-              Professional training and workplace readiness achievements.
+              Professional credentials in Full-Stack Engineering, real-world externships, and recognized workplace readiness achievements.
             </p>
           </div>
 

@@ -19,14 +19,15 @@ const FeaturedProjects = () => {
           </h2>
 
           <p className="mt-3 max-w-2xl mx-auto text-white/65">
-            Two team-built projects recognized during bootcamp CodeJam— focused
-            on user experience and real-world problem solving.
+            Featured projects from team-based CodeJam competitions, recognized
+            for outstanding UI/UX design and practical, real-world
+            problem-solving
           </p>
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {BOOTCAMP_PROJECTS.map((project) => {
-            console.log(project)
+            console.log(project);
             return (
               <ProjectCard
                 key={project.title}
