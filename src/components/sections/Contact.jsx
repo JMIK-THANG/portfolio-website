@@ -68,9 +68,7 @@ const Contact = () => {
               {/* text */}
               <span className="relative flex items-center gap-2">
                 Send
-                <span className="transition-transform duration-300 group-hover:translate-x-0.5">
-                  →
-                </span>
+                
               </span>
             </button>
           </div>
