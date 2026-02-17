@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Navbar from "../layout/Navbar" // make sure path is correct
+import Navbar from "../layout/Navbar"; // make sure path is correct
 
 const Hero = () => {
   const [showTitle, setShowTitle] = useState(false);
@@ -69,7 +69,8 @@ const Hero = () => {
           ].join(" ")}
         >
           <p className="mt-4 text-lg md:text-2xl text-white/80">
-            I build high-performance, responsive web applications with precision.
+            I build high-performance, responsive web applications with
+            precision.
           </p>
 
           <p className="mx-auto mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-white/65">
@@ -81,7 +82,7 @@ const Hero = () => {
 
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-3">
             <a
-              href="/My_Resume.pdf"
+              href="/J_Thang_Resume.pdf"
               download
               className="w-full sm:w-auto rounded-2xl border border-white/15 bg-white/10 px-7 py-3 text-sm font-semibold text-white hover:bg-white/15 transition"
             >
