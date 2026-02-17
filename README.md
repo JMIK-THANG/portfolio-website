@@ -1,16 +1,41 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal portfolio website built with **React** and **Tailwind CSS**, showcasing my projects, skills, and contact info.
 
-Currently, two official plugins are available:
+## Live Demo
+- https://portfolio-website-sx94.onrender.com
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Responsive layout (mobile → desktop)
+- Tailwind-based Navbar with animated hamburger menu
+- About section with avatar, quick intro, resume download, and social links
+- Featured projects section (CodeJam highlights) with screenshots, tech stack chips, and links
+- Contact section + footer
 
-## React Compiler
+## Tech Stack
+- React
+- Tailwind CSS (v4)
+- JavaScript (ES6+)
+- Vite (if you’re using CRA instead, update the scripts below)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Sections
+- Home / Hero
+- About Me
+- Skills
+- Projects (Featured)
+- Contact
 
-## Expanding the ESLint configuration
+## Featured Projects
+### Lover’s Slow Jamz (Bootcamp CodeJam Winner)
+A fun, interactive project built for a CodeJam challenge.
+- Live Demo: (add link)
+- GitHub: (add link)
+- Stack: (add stack)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Emergency Connect (Bootcamp CodeJam Audience Award)
+A project focused on helping users connect quickly in urgent situations.
+- Live Demo: (add link)
+- GitHub: (add link)
+- Stack: (add stack)
+
+
