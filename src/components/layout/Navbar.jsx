@@ -75,7 +75,13 @@ export default function Navbar() {
       <nav className="mx-auto max-w-6xl px-4 h-16 flex items-center">
         <div className="flex w-full items-center justify-between">
           {/* Left */}
-          <a href="#hero" className="flex items-center gap-4">
+          <a href="#hero" className="flex items-center gap-2">
+            <img
+              src="/favicon-jm.ico"
+              alt="logo"
+              className="h-6 w-6 object-contain"
+            />
+
             <h1 className="text-lg md:text-xl font-semibold text-white">
               Jmik Thang
             </h1>
