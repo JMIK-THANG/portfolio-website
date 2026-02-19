@@ -4,10 +4,7 @@ import ProjectCard from "../cards/ProjectCard";
 
 const AllProjects = () => {
   return (
-    <section
-      id="all-projects"
-      className="bg-zinc-950 py-20 px-4 text-white"
-    >
+    <section id="all-projects" className="bg-zinc-950 py-20 px-4 text-white">
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <h2 className="mt-2 text-2xl md:text-3xl font-semibold">
@@ -18,13 +15,13 @@ const AllProjects = () => {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {ALL_PROJECTS.map((project) => (
             <ProjectCard
-            key={project.title}
-            {...project}
-            variant="all"       // 👈 different button style
-            showAward={false}   // 👈 hide trophy + CodeJam pill
+              key={project.title}
+              {...project}
+              variant="all"
+              showAward={false}
             />
           ))}
         </div>

@@ -5,6 +5,7 @@ import emergencyConnectImg from "../assets/emergency-connect.png";
 // ✅ Update these filenames to match your real asset names
 import winterVacationImg from "../assets/winter-vacation.jpg";
 import aroundTheUsImg from "../assets/aroundtheus.jpg";
+import wtwrImg from "../assets/wtwr.jpeg";
 
 export const BOOTCAMP_PROJECTS = [
   {
@@ -53,5 +54,24 @@ export const ALL_PROJECTS = [
     liveDemo: "https://jmik-thang.github.io/se_project_aroundtheus/",
     github: "https://github.com/JMIK-THANG/se_project_aroundtheus",
     tag: "Project",
+  },
+  {
+    title: "WTWR (What to Wear?)",
+    badge: "Full-Stack Application",
+    description:
+      "A full-stack weather-based clothing application that provides real-time outfit recommendations. Built with React and a RESTful Node.js/Express backend, featuring user authentication, profile management, and interactive clothing item CRUD with likes functionality.",
+    image: wtwrImg,
+    tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "JWT Auth",
+      "CSS",
+      "Responsive Design",
+    ],
+    liveDemo: "https://www.wtwrjmik.crabdance.com/",
+    github: "https://github.com/JMIK-THANG/se_project_react",
+    tag: "Full Stack",
   },
 ];

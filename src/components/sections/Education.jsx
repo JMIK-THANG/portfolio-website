@@ -38,7 +38,7 @@ const Education = () => {
             />
 
             <EducationCard
-              title="TripleTen"
+              title="TripleTen-Fox Finance"
               subtitle="Full-Stack Engineering Externship — Fox Finance"
               date="Jan 2026"
               description="Completed a real-world externship building secure full-stack applications using React, Express, Prisma, and PostgreSQL."

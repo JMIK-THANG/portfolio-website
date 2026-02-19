@@ -17,8 +17,11 @@ const ACCENT_BY_TITLE = {
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className=" py-20 scroll-mt-28 bg-slate-900
-">
+    <section
+      id="skills"
+      className=" py-20 scroll-mt-28 bg-slate-900
+"
+    >
       <div className="mx-auto max-w-6xl px-4">
         {/* Header */}
         <div className="mb-10">
@@ -27,7 +30,9 @@ export default function SkillsSection() {
             Full-Stack Toolkit
           </h2>
           <p className="mt-3 max-w-3xl text-white/70 leading-relaxed">
-            Organized by category — one skill per line for easy scanning.
+            A focused toolkit of modern frontend and full-stack technologies
+            used to build scalable, responsive, and production-ready web
+            applications.
           </p>
         </div>
 
@@ -72,8 +77,6 @@ export default function SkillsSection() {
             );
           })}
         </div>
-
-       
       </div>
     </section>
   );
