@@ -13,7 +13,6 @@ const EducationCard = ({
 
   return (
     <>
-      {/* CARD */}
       <div
         onClick={() => setOpen(true)}
         className="group cursor-pointer rounded-3xl border border-white/10 bg-white/5 backdrop-blur p-5 md:p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:border-white/15 hover:shadow-[0_20px_60px_rgba(0,0,0,0.45)]"
@@ -53,19 +52,6 @@ const EducationCard = ({
         <p className="mt-3 text-sm md:text-[15px] leading-relaxed text-white/70">
           {description}
         </p>
-
-        {skills.length > 0 && (
-          <div className="mt-4 flex flex-wrap gap-2">
-            {skills.map((s) => (
-              <span
-                key={s}
-                className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80"
-              >
-                {s}
-              </span>
-            ))}
-          </div>
-        )}
       </div>
 
       {/* FULL VIEW MODAL */}
