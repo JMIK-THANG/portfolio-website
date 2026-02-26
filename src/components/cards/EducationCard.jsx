@@ -5,9 +5,8 @@ const EducationCard = ({
   title,
   subtitle,
   description,
-  image, // PDF or image URL
+  image, 
   date,
-  skills = [],
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -19,18 +18,11 @@ const EducationCard = ({
       >
         {/* PREVIEW */}
         <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/30 h-48 md:h-52 flex items-center justify-center">
-          {image ? (
-            <img
-              src={image}
-              alt={title}
-              className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
-            />
-          ) : (
-            <div className="flex flex-col items-center gap-2 text-white/60">
-              <FileText className="h-10 w-10" />
-              <span className="text-sm">View Certificate</span>
-            </div>
-          )}
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+          />
         </div>
 
         <div className="mt-5 flex items-start justify-between gap-3">

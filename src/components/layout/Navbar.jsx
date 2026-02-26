@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import img from "../../assets/navbar-img.png";
 
@@ -10,6 +12,7 @@ export default function Navbar() {
   const [activeId, setActiveId] = useState("hero");
   const [scrolled, setScrolled] = useState(false);
 
+  // Close mobile menu when resizing to desktop
   useEffect(() => {
     const onResize = () => {
       if (window.innerWidth >= 768) setOpen(false);
@@ -18,7 +21,7 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  // ✅ detect scroll for background style
+  // Background style on scroll
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     onScroll();
@@ -26,26 +29,21 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // ✅ highlight active section while scrolling (MATCH YOUR REAL IDS)
+  // Highlight active section while scrolling
   useEffect(() => {
     const ids = ["hero", "about-me", "featured-projects", "contact"];
-    const sections = ids
-      .map((id) => document.getElementById(id))
-      .filter(Boolean);
-
+    const sections = ids.map((id) => document.getElementById(id)).filter(Boolean);
     if (!sections.length) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries
           .filter((e) => e.isIntersecting)
-          .sort(
-            (a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0),
-          )[0];
+          .sort((a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0))[0];
 
         if (visible?.target?.id) setActiveId(visible.target.id);
       },
-      { root: null, threshold: 0.35 },
+      { root: null, threshold: 0.35 }
     );
 
     sections.forEach((sec) => observer.observe(sec));
@@ -67,28 +65,28 @@ export default function Navbar() {
       className={[
         "fixed top-0 left-0 w-full z-50",
         "transition-all duration-300",
-        scrolled
-          ? "bg-slate-950/20 backdrop-blur border-b border-white/10"
+        scrolled || open
+          ? "bg-slate-950/60 backdrop-blur border-b border-white/10"
           : "bg-transparent border-b border-transparent",
       ].join(" ")}
     >
-      <nav className="mx-auto max-w-6xl px-4 h-16 flex items-center">
-        <div className="flex w-full items-center justify-between">
+      <nav className="mx-auto max-w-6xl px-4 h-16">
+        {/* 3-column grid keeps center menu truly centered */}
+        <div className="grid w-full grid-cols-3 items-center h-full">
           {/* Left */}
-          <a href="#hero" className="flex items-center gap-2">
+          <a href="#hero" className="flex items-center gap-2 justify-self-start">
             <img
               src="/favicon-jm.ico"
               alt="logo"
               className="h-6 w-6 object-contain"
             />
-
             <h1 className="text-lg md:text-xl font-semibold text-white">
               Jmik Thang
             </h1>
           </a>
 
-          {/* Desktop links */}
-          <ul className="hidden md:flex items-center gap-6 text-sm font-medium">
+          {/* Center (Desktop links) */}
+          <ul className="hidden md:flex items-center justify-center gap-8 text-sm font-medium">
             <li>
               <NavItem href="#about-me" id="about-me">
                 About
@@ -107,7 +105,7 @@ export default function Navbar() {
           </ul>
 
           {/* Right */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 justify-self-end">
             <a
               href="https://github.com/JMIK-THANG"
               target="_blank"
