@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-slate-950 text-white px-4 py-16 sm:py-20"
+      className="bg-slate-900 text-white px-4 py-16 sm:py-20"
     >
       <div className="mx-auto max-w-xl">
         {/* Center header */}

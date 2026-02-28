@@ -73,21 +73,6 @@ export default function Navbar() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  // Close on outside click (mobile panel)
-  useEffect(() => {
-    if (!open) return;
-    const onDown = (e) => {
-      if (!panelRef.current) return;
-      if (!panelRef.current.contains(e.target)) setOpen(false);
-    };
-    window.addEventListener("mousedown", onDown);
-    window.addEventListener("touchstart", onDown);
-    return () => {
-      window.removeEventListener("mousedown", onDown);
-      window.removeEventListener("touchstart", onDown);
-    };
-  }, [open]);
-
   const NavItem = ({ href, id, children, onClick, className = "" }) => (
     <a
       href={href}
@@ -102,7 +87,7 @@ export default function Navbar() {
     <>
       <header
         className={[
-          "fixed top-0 left-0 w-full z-50",
+          "fixed top-0 left-0 w-full z-[60]",
           "transition-all duration-300",
           scrolled || open
             ? "bg-slate-950/80 backdrop-blur border-b border-white/10"
@@ -110,7 +95,6 @@ export default function Navbar() {
         ].join(" ")}
       >
         <nav className="mx-auto max-w-6xl px-4 h-16">
-          {/* ✅ Mobile uses flex; Desktop uses 3-col grid */}
           <div className="flex items-center justify-between h-full md:grid md:grid-cols-3 md:items-center">
             {/* Left */}
             <a href="#hero" className="flex items-center gap-2">
@@ -159,32 +143,29 @@ export default function Navbar() {
                 />
               </a>
 
-              {/* Hamburger */}
+              {/* Hamburger / Close */}
               <button
                 type="button"
-                className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition"
+                className="md:hidden relative z-[70] inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition"
                 aria-label="Toggle menu"
                 aria-expanded={open}
                 onClick={() => setOpen((v) => !v)}
               >
                 <div className="relative h-5 w-6">
                   <span
-                    className={[
-                      "absolute left-0 top-1/2 h-0.5 w-6 -translate-y-1/2 rounded-full bg-white transition-all duration-300",
-                      open ? "rotate-45" : "-translate-y-2",
-                    ].join(" ")}
+                    className={`absolute left-0 top-1/2 h-0.5 w-6 -translate-y-1/2 rounded-full bg-white transition-all duration-300 ${
+                      open ? "rotate-45" : "-translate-y-2"
+                    }`}
                   />
                   <span
-                    className={[
-                      "absolute left-0 top-1/2 h-0.5 w-6 -translate-y-1/2 rounded-full bg-white transition-all duration-200",
-                      open ? "opacity-0" : "opacity-100",
-                    ].join(" ")}
+                    className={`absolute left-0 top-1/2 h-0.5 w-6 -translate-y-1/2 rounded-full bg-white transition-all duration-200 ${
+                      open ? "opacity-0" : "opacity-100"
+                    }`}
                   />
                   <span
-                    className={[
-                      "absolute left-0 top-1/2 h-0.5 w-6 -translate-y-1/2 rounded-full bg-white transition-all duration-300",
-                      open ? "-rotate-45" : "translate-y-2",
-                    ].join(" ")}
+                    className={`absolute left-0 top-1/2 h-0.5 w-6 -translate-y-1/2 rounded-full bg-white transition-all duration-300 ${
+                      open ? "-rotate-45" : "translate-y-2"
+                    }`}
                   />
                 </div>
               </button>
@@ -195,56 +176,50 @@ export default function Navbar() {
 
       {/* Overlay */}
       <div
-        className={[
-          "md:hidden fixed inset-0 z-40 transition-opacity duration-200",
-          open
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none",
-        ].join(" ")}
-      >
-        <div className="absolute inset-0 bg-black/50" />
-      </div>
+        className={`md:hidden fixed inset-0 z-[40] bg-black/50 transition-opacity duration-200 ${
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setOpen(false)}
+      />
 
-      {/* Mobile panel (below header) */}
+      {/* Mobile panel */}
       <div
         className={[
-          "md:hidden fixed left-0 right-0 z-50",
-          "top-16 px-4",
+          "md:hidden fixed left-0 right-0 z-[55]",
+          "top-16",
           "transition-all duration-300",
-          open
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-2 opacity-0 pointer-events-none",
+          open ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0 pointer-events-none",
         ].join(" ")}
       >
         <div
           ref={panelRef}
-          className="mx-auto max-w-6xl rounded-2xl border border-white/10 bg-slate-950/95 backdrop-blur p-2 shadow-xl"
+          className="mx-auto max-w-6xl border border-white/10 bg-slate-950 backdrop-blur p-2 shadow-xl"
         >
           <a
             href="#about-me"
             onClick={() => setOpen(false)}
-            className="block rounded-xl px-4 py-3 text-base font-medium text-white/85 hover:bg-white/10 hover:text-white transition"
+            className="block px-4 py-3 text-base font-medium text-white/85 hover:bg-white/10 hover:text-white transition"
           >
             About
           </a>
           <a
             href="#featured-projects"
             onClick={() => setOpen(false)}
-            className="block rounded-xl px-4 py-3 text-base font-medium text-white/85 hover:bg-white/10 hover:text-white transition"
+            className="block px-4 py-3 text-base font-medium text-white/85 hover:bg-white/10 hover:text-white transition"
           >
             Projects
           </a>
           <a
             href="#contact"
             onClick={() => setOpen(false)}
-            className="block rounded-xl px-4 py-3 text-base font-medium text-white/85 hover:bg-white/10 hover:text-white transition"
+            className="block px-4 py-3 text-base font-medium text-white/85 hover:bg-white/10 hover:text-white transition"
           >
             Contact
           </a>
         </div>
       </div>
 
-      {/* Spacer so content doesn't hide behind fixed header */}
+      {/* Spacer */}
       <div className="h-16" />
     </>
   );

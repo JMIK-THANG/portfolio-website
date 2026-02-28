@@ -6,7 +6,7 @@ export default function AboutIntro() {
   return (
     <section
       id="about-me"
-      className="bg-slate-900 text-white px-4 py-10 sm:py-20 md:py-28 "
+      className="bg-slate-900 text-white px-4 py-10 sm:py-20 md:py-28  scroll-mt-15 md:scroll-mt-20"
     >
       {/* ✅ ONE container controls edges for EVERYTHING */}
       <div className="mx-auto max-w-6xl">

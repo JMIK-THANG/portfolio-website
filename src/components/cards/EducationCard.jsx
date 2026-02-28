@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import { GraduationCap, FileText, X } from "lucide-react";
 
-const EducationCard = ({
-  title,
-  subtitle,
-  description,
-  image, 
-  date,
-}) => {
+const EducationCard = ({ title, subtitle, description, image, date }) => {
   const [open, setOpen] = useState(false);
 
   return (
