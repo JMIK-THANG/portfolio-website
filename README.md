@@ -1,41 +1,71 @@
 # Portfolio Website
 
-My personal portfolio website built with **React** and **Tailwind CSS**, showcasing my projects, skills, and contact info.
+My personal portfolio website built with React and Tailwind CSS, showcasing my projects, skills, and contact information.
 
 ## Live Demo
+
 - https://portfolio-website-sx94.onrender.com
 
+---
+
 ## Features
-- Responsive layout (mobile → desktop)
-- Tailwind-based Navbar with animated hamburger menu
-- About section with avatar, quick intro, resume download, and social links
-- Featured projects section (CodeJam highlights) with screenshots, tech stack chips, and links
-- Contact section + footer
+
+- Responsive layout (mobile to desktop)
+- Tailwind-based navbar with animated hamburger menu
+- About section with avatar, introduction, resume download, and social links
+- Featured projects section with screenshots, tech stack chips, and links
+- Contact section and footer
+
+---
 
 ## Tech Stack
-- React
-- Tailwind CSS (v4)
+
+- React 19
+- Tailwind CSS v4
 - JavaScript (ES6+)
-- Vite (if you’re using CRA instead, update the scripts below)
+- Vite
+- React Router DOM
+- Lucide React
+- Motion
+
+---
 
 ## Sections
+
 - Home / Hero
-- About Me
+- About
 - Skills
-- Projects (Featured)
+- Projects
 - Contact
 
+---
+
 ## Featured Projects
+
 ### Lover’s Slow Jamz (Bootcamp CodeJam Winner)
-A fun, interactive project built for a CodeJam challenge.
-- Live Demo: (add link)
-- GitHub: (add link)
-- Stack: (add stack)
+
+- Live Demo: https://jmik-thang.github.io/Lover-s-Slow-Jamz/
+- GitHub: https://github.com/JMIK-THANG/Lover-s-Slow-Jamz
+- Stack:
+  - JavaScript
+  - HTML
+  - CSS
 
 ### Emergency Connect (Bootcamp CodeJam Audience Award)
-A project focused on helping users connect quickly in urgent situations.
-- Live Demo: (add link)
-- GitHub: (add link)
-- Stack: (add stack)
 
+- Live Demo: https://johnwallacegerrard.github.io/Emergency_Connect/
+- GitHub: https://github.com/JMIK-THANG/Emergency_Connect
+- Stack:
+  - JavaScript
+  - HTML
+  - CSS
 
+---
+
+## Run Locally
+
+### Clone
+
+```bash
+git clone https://github.com/JMIK-THANG/portfolio-website.git
+cd portfolio-website
