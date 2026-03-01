@@ -68,11 +68,6 @@ const Hero = () => {
             showRest ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
           ].join(" ")}
         >
-          <p className="mt-4 text-lg md:text-2xl text-white/80">
-            I build high-performance, responsive web applications with
-            precision.
-          </p>
-
           <p className="mx-auto mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-white/65">
             I&apos;m a Full-Stack Developer focused on building modern web
             experiences with <span className="text-white/90">React</span>,{" "}
