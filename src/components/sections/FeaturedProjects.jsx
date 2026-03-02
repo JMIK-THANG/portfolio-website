@@ -27,7 +27,6 @@ const FeaturedProjects = () => {
 
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {BOOTCAMP_PROJECTS.map((project) => {
-            console.log(project);
             return (
               <ProjectCard
                 key={project.title}

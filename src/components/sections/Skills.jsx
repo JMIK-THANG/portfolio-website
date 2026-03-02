@@ -42,6 +42,7 @@ export default function SkillsSection() {
             const Icon = group.icon;
             const border = BORDER_BY_TITLE[group.title] ?? "border-white/15";
             const accent = ACCENT_BY_TITLE[group.title] ?? "bg-white/40";
+            console.log(group)
 
             return (
               <div
