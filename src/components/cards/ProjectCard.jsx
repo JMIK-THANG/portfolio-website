@@ -67,7 +67,7 @@ export default function ProjectCard({
         </p>
 
         {/* Tech chips */}
-        <div className="mt-4 flex flex-wrap gap-2">
+        {/* <div className="mt-4 flex flex-wrap gap-2">
           {tech.map((t) => (
             <span
               key={t}
@@ -76,7 +76,7 @@ export default function ProjectCard({
               {t}
             </span>
           ))}
-        </div>
+        </div> */}
 
         {/* Buttons pinned to bottom */}
         <div className="mt-auto pt-6 flex flex-col sm:flex-row gap-3">
