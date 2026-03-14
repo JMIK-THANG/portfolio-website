@@ -4,75 +4,63 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-slate-900 text-white px-4 py-16 sm:py-20"
+      className="bg-slate-900 text-white px-4 py-20 scroll-mt-16"
     >
-      <div className="mx-auto max-w-xl">
-        {/* Center header */}
-        <div className="text-center pt-4">
-          <p className="text-xs tracking-[0.35em] uppercase text-white/60">
-            Contact
-          </p>
-        </div>
-
-        {/* Form (stacked + centered) */}
-        <form
-          onSubmit={(e) => e.preventDefault()}
-          className="mt-10 rounded-3xl border border-white/10 bg-white/5 backdrop-blur p-6 sm:p-8"
-        >
-          <div className="grid gap-4">
-            <div>
-              <label className="block text-sm text-white/70 mb-1">Email</label>
-              <input
-                name="email"
-                type="email"
-                placeholder="you@example.com"
-                required
-                className="w-full rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-white
-                           placeholder:text-white/35 outline-none transition
-                           focus:border-white/30 focus:ring-2 focus:ring-white/20"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm text-white/70 mb-1">
-                Message
-              </label>
-              <textarea
-                name="message"
-                rows={5}
-                placeholder="Your message..."
-                required
-                className="w-full rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-white
-                           placeholder:text-white/35 outline-none transition resize-none
-                           focus:border-white/30 focus:ring-2 focus:ring-white/20"
-              />
-            </div>
-
-            {/* Fancy button */}
-            <button
-              type="submit"
-              className="group relative mt-2 inline-flex w-full items-center justify-center overflow-hidden rounded-2xl px-6 py-3 text-sm font-semibold text-slate-950"
-            >
-              {/* gradient bg */}
-              <span className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white" />
-
-              {/* glow */}
-              <span className="absolute -inset-1 opacity-0 blur-xl transition duration-300 group-hover:opacity-70 bg-white/30" />
-
-              {/* shine sweep */}
-              <span className="absolute left-[-40%] top-0 h-full w-1/3 -skew-x-12 bg-white/40 opacity-0 transition duration-500 group-hover:left-[120%] group-hover:opacity-100" />
-
-              {/* border */}
-              <span className="absolute inset-0 rounded-2xl ring-1 ring-white/20" />
-
-              {/* text */}
-              <span className="relative flex items-center gap-2">
-                Send
-                
-              </span>
-            </button>
+      <div className="mx-auto max-w-6xl">
+        <div className="rounded-[28px] border border-white/10 bg-[#0f1b3d] px-8 py-12 md:px-16 md:py-14">
+          {/* Heading */}
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-2xl md:text-3xl font-semibold">
+              Let’s Connect
+            </h2>
+            <p className="mt-4 text-sm md:text-base leading-7 text-white/70">
+              I’m open to entry-level opportunities, collaboration, and
+              conversations about web development. Feel free to send a message.
+            </p>
           </div>
-        </form>
+
+          {/* Form Card */}
+          <form
+            onSubmit={(e) => e.preventDefault()}
+            className="mx-auto mt-12 w-full max-w-xl rounded-[24px] border border-white/10 bg-[#0b1330] px-6 py-7"
+          >
+            <div className="grid gap-5">
+              <div>
+                <label className="mb-2 block text-sm text-white/70">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  placeholder="you@example.com"
+                  required
+                  className="w-full rounded-xl border border-white/15 bg-black/20 px-4 py-3 text-sm text-white placeholder:text-white/35 outline-none transition focus:border-white/30 focus:ring-2 focus:ring-white/20"
+                />
+              </div>
+
+              <div>
+                <label className="mb-2 block text-sm text-white/70">
+                  Message
+                </label>
+                <textarea
+                  rows={5}
+                  placeholder="Your message..."
+                  required
+                  className="w-full resize-none rounded-xl border border-white/15 bg-black/20 px-4 py-3 text-sm text-white placeholder:text-white/35 outline-none transition focus:border-white/30 focus:ring-2 focus:ring-white/20"
+                />
+              </div>
+
+              {/* Fancy Button */}
+              <div className="flex justify-center pt-4">
+  <button
+    type="submit"
+    className="relative inline-flex items-center justify-center rounded-full px-8 py-3 text-sm font-semibold text-white border border-white/30 bg-white/5 backdrop-blur transition duration-300 hover:bg-white/10 hover:scale-[1.03]"
+  >
+    Send Message
+  </button>
+</div>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   );
