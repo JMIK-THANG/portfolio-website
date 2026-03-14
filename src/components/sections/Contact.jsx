@@ -7,7 +7,7 @@ const Contact = () => {
       className="bg-slate-900 text-white px-4 py-20 scroll-mt-16"
     >
       <div className="mx-auto max-w-6xl">
-        <div className="rounded-[28px] border border-white/10 bg-[#0f1b3d] px-8 py-12 md:px-16 md:py-14">
+        <div className="rounded-[28px] border px-8 py-12 md:px-16 md:py-14">
           {/* Heading */}
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl md:text-3xl font-semibold">
@@ -51,13 +51,13 @@ const Contact = () => {
 
               {/* Fancy Button */}
               <div className="flex justify-center pt-4">
-  <button
-    type="submit"
-    className="relative inline-flex items-center justify-center rounded-full px-8 py-3 text-sm font-semibold text-white border border-white/30 bg-white/5 backdrop-blur transition duration-300 hover:bg-white/10 hover:scale-[1.03]"
-  >
-    Send Message
-  </button>
-</div>
+                <button
+                  type="submit"
+                  className="relative inline-flex items-center justify-center rounded-full px-8 py-3 text-sm font-semibold text-white border border-white/30 bg-white/5 backdrop-blur transition duration-300 hover:bg-white/10 hover:scale-[1.03]"
+                >
+                  Send Message
+                </button>
+              </div>
             </div>
           </form>
         </div>

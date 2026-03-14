@@ -9,7 +9,7 @@ export default function AboutIntro() {
       className="bg-slate-900 text-white px-4 py-16 md:py-20 scroll-mt-16"
     >
       <div className="mx-auto max-w-6xl">
-        <div className="rounded-[28px] border border-white/10 bg-[#0f1b3d] px-8 py-10 md:px-16 md:py-12">
+        <div className="rounded-[28px] border px-8 py-10 md:px-16 md:py-12">
           {/* Image */}
           <div className="flex justify-center">
             <div className="h-28 w-28 md:h-32 md:w-32 overflow-hidden rounded-full border border-white/15">
