@@ -52,12 +52,12 @@ export default function Navbar() {
         const visible = entries
           .filter((e) => e.isIntersecting)
           .sort(
-            (a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0)
+            (a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0),
           )[0];
 
         if (visible?.target?.id) setActiveId(visible.target.id);
       },
-      { root: null, threshold: 0.35 }
+      { root: null, threshold: 0.35 },
     );
 
     sections.forEach((sec) => observer.observe(sec));
@@ -98,11 +98,10 @@ export default function Navbar() {
     <>
       <header
         className={[
-          "fixed top-0 left-0 w-full z-[60]",
-          "transition-all duration-300",
+          "fixed top-0 left-0 w-full z-[60] transition-all duration-300 border-b border-white/10",
           scrolled || open
-            ? "bg-slate-950/80 backdrop-blur border-b border-white/10"
-            : "bg-transparent border-b border-transparent",
+            ? "bg-slate-950/90 backdrop-blur-md"
+            : "bg-slate-950/90 backdrop-blur-md",
         ].join(" ")}
       >
         <nav className="mx-auto max-w-6xl px-4 h-16">

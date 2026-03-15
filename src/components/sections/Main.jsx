@@ -42,7 +42,6 @@ function SectionReveal({ children }) {
 const Main = () => {
   return (
     <>
-
       <SectionReveal>
         <Hero />
       </SectionReveal>
