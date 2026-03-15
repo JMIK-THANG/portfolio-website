@@ -45,7 +45,6 @@ useEffect(() => {
       id="hero"
       className="bg-slate-950 text-white min-h-screen flex items-center justify-center relative px-4 pt-28"
     >
-      <Navbar />
 
       <div className="mx-auto max-w-6xl w-full">
         <div className="rounded-[28px] border border-white/10 bg-[#0f1b3d] px-8 py-20 md:px-16 text-center">

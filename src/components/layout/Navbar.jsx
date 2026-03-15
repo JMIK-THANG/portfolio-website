@@ -32,8 +32,19 @@ export default function Navbar() {
 
   // Highlight active section while scrolling
   useEffect(() => {
-    const ids = ["hero", "about-me", "featured-projects", "contact"];
-    const sections = ids.map((id) => document.getElementById(id)).filter(Boolean);
+    const ids = [
+      "hero",
+      "about-me",
+      "skills",
+      "education",
+      "featured-projects",
+      "contact",
+    ];
+
+    const sections = ids
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
     if (!sections.length) return;
 
     const observer = new IntersectionObserver(
@@ -109,10 +120,20 @@ export default function Navbar() {
             </a>
 
             {/* Center (Desktop links) */}
-            <ul className="hidden md:flex items-center justify-center gap-8 text-sm font-medium">
+            <ul className="hidden md:flex items-center justify-center gap-6 text-sm font-medium">
               <li>
                 <NavItem href="#about-me" id="about-me">
                   About
+                </NavItem>
+              </li>
+              <li>
+                <NavItem href="#skills" id="skills">
+                  Skills
+                </NavItem>
+              </li>
+              <li>
+                <NavItem href="#education" id="education">
+                  Education
                 </NavItem>
               </li>
               <li>
@@ -177,7 +198,9 @@ export default function Navbar() {
       {/* Overlay */}
       <div
         className={`md:hidden fixed inset-0 z-[40] bg-black/50 transition-opacity duration-200 ${
-          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          open
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setOpen(false)}
       />
@@ -188,7 +211,9 @@ export default function Navbar() {
           "md:hidden fixed left-0 right-0 z-[55]",
           "top-16",
           "transition-all duration-300",
-          open ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0 pointer-events-none",
+          open
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-2 opacity-0 pointer-events-none",
         ].join(" ")}
       >
         <div
@@ -201,6 +226,20 @@ export default function Navbar() {
             className="block px-4 py-3 text-base font-medium text-white/85 hover:bg-white/10 hover:text-white transition"
           >
             About
+          </a>
+          <a
+            href="#skills"
+            onClick={() => setOpen(false)}
+            className="block px-4 py-3 text-base font-medium text-white/85 hover:bg-white/10 hover:text-white transition"
+          >
+            Skills
+          </a>
+          <a
+            href="#education"
+            onClick={() => setOpen(false)}
+            className="block px-4 py-3 text-base font-medium text-white/85 hover:bg-white/10 hover:text-white transition"
+          >
+            Education
           </a>
           <a
             href="#featured-projects"

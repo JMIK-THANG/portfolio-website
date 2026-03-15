@@ -4,11 +4,10 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-slate-900 text-white px-4 min-h-screen flex items-center scroll-mt-16"
+      className="bg-slate-900 text-white px-4 py-16 md:py-20 scroll-mt-16"
     >
-      <div className="mx-auto max-w-6xl w-full">
+      <div className="mx-auto max-w-6xl">
         <div className="rounded-[28px] border border-white/10 px-8 py-10 md:px-16 md:py-12">
-          
           {/* Heading */}
           <div className="mx-auto max-w-xl text-center">
             <h2 className="text-2xl md:text-3xl font-semibold">
@@ -50,18 +49,16 @@ const Contact = () => {
                 />
               </div>
 
-              {/* Button */}
               <div className="flex justify-center pt-2">
                 <button
                   type="submit"
-                  className="relative inline-flex items-center justify-center rounded-full px-7 py-2.5 text-sm font-semibold text-white border border-white/30 bg-white/5 backdrop-blur transition duration-300 hover:bg-white/10 hover:scale-[1.03]"
+                  className="relative inline-flex items-center justify-center rounded-full border border-white/30 bg-white/5 px-7 py-2.5 text-sm font-semibold text-white backdrop-blur transition duration-300 hover:scale-[1.03] hover:bg-white/10"
                 >
                   Send Message
                 </button>
               </div>
             </div>
           </form>
-
         </div>
       </div>
     </section>
