@@ -1,6 +1,7 @@
 // src/data/projects.js
 import slowJamzImg from "../assets/slow-jamz.jpeg";
 import emergencyConnectImg from "../assets/emergency-connect.png";
+import newsExplorerImg from "../assets/news-explorer.jpeg";
 
 // ✅ Update these filenames to match your real asset names
 import winterVacationImg from "../assets/winter-vacation.jpg";
@@ -72,6 +73,26 @@ export const ALL_PROJECTS = [
     ],
     liveDemo: "https://www.wtwrjmik.crabdance.com/",
     github: "https://github.com/JMIK-THANG/se_project_react",
+    tag: "Full Stack",
+  },
+  {
+    title: "News Explorer",
+    badge: "Full-Stack Application",
+    description:
+      "A news search application that allows users to find and save articles based on keywords. Built with React and a Node.js/Express backend, featuring authentication, protected routes, and saved articles functionality.",
+    image: newsExplorerImg,
+    tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "JWT Auth",
+      "REST API",
+      "CSS",
+      "Responsive Design",
+    ],
+    liveDemo: "https://newsexplorer-react.onrender.com/",
+    github: "https://github.com/JMIK-THANG/newsExplorer-react",
     tag: "Full Stack",
   },
 ];
