@@ -10,30 +10,31 @@ const Hero = () => {
   const [role, setRole] = useState("");
   const [nameDone, setNameDone] = useState(false);
 
-  // Type NAME first (even though it's visually second)
+  // Type NAME first
   useEffect(() => {
     let timeout;
 
     if (name.length < nameText.length) {
       timeout = setTimeout(() => {
         setName(nameText.slice(0, name.length + 1));
-      }, 110); // slower smoother typing
+      }, 110);
     } else {
       setTimeout(() => {
         setNameDone(true);
-      }, 500); // pause before role starts
+      }, 500);
     }
 
     return () => clearTimeout(timeout);
   }, [name]);
 
+  // Then type role
   useEffect(() => {
     let timeout;
 
     if (nameDone && role.length < roleText.length) {
       timeout = setTimeout(() => {
         setRole(roleText.slice(0, role.length + 1));
-      }, 80); // smoother role typing
+      }, 80);
     }
 
     return () => clearTimeout(timeout);
@@ -63,10 +64,21 @@ const Hero = () => {
           </div>
 
           <p className="mx-auto mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-white/65">
-            I build modern web applications with clean UI, structured backend
-            logic, and real-world full-stack architecture using React, Node.js,
-            and REST APIs.
+            I build scalable full-stack applications with intuitive interfaces,
+            robust backend architecture, and thoughtful user experiences using
+            React, Node.js, and modern web technologies.
           </p>
+
+          <div className="mt-8 flex justify-center">
+            <a
+              href="/JM_Thang.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-white/90"
+            >
+              View Resume
+            </a>
+          </div>
         </div>
       </div>
     </section>
