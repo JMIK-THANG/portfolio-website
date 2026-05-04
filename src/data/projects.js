@@ -2,6 +2,7 @@
 import slowJamzImg from "../assets/slow-jamz.jpeg";
 import emergencyConnectImg from "../assets/emergency-connect.png";
 import newsExplorerImg from "../assets/news-explorer.jpeg";
+import storeXImg from "../assets/store-x.png";
 
 // ✅ Update these filenames to match your real asset names
 import winterVacationImg from "../assets/winter-vacation.jpg";
@@ -93,6 +94,25 @@ export const ALL_PROJECTS = [
     ],
     liveDemo: "https://newsexplorer-react.onrender.com/",
     github: "https://github.com/JMIK-THANG/newsExplorer-react",
+    tag: "Full Stack",
+  },
+  {
+    title: "Store X",
+    badge: "Full-Stack E-Commerce App",
+    description:
+      "A full-stack e-commerce website with product browsing, category filtering, search, cart functionality, and a clean responsive UI. Built with React, Tailwind CSS, Node.js, Express, and PostgreSQL.",
+    image: storeXImg,
+    tech: [
+      "React",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "REST API",
+      "Responsive Design",
+    ],
+    liveDemo: "https://store-x-djme.onrender.com/",
+    github: "https://github.com/JMIK-THANG/store-x",
     tag: "Full Stack",
   },
 ];
