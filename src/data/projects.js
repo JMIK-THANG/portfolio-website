@@ -72,7 +72,7 @@ export const ALL_PROJECTS = [
       "CSS",
       "Responsive Design",
     ],
-    liveDemo: "https://www.wtwrjmik.crabdance.com/",
+    liveDemo: "https://se-project-react-tl1m.onrender.com/",
     github: "https://github.com/JMIK-THANG/se_project_react",
     tag: "Full Stack",
   },
