@@ -1,84 +1,157 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Hero = () => {
-  const nameText = "Hey, I'm Jmik";
+  const heroRef = useRef(null);
+
+  const nameText = "Hey, I'm Jmik.";
   const roleText = "FULL-STACK DEVELOPER";
 
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
   const [nameDone, setNameDone] = useState(false);
 
-  // Type NAME first
   useEffect(() => {
     let timeout;
 
     if (name.length < nameText.length) {
       timeout = setTimeout(() => {
         setName(nameText.slice(0, name.length + 1));
-      }, 110);
+      }, 90);
     } else {
-      setTimeout(() => {
-        setNameDone(true);
-      }, 500);
+      timeout = setTimeout(() => setNameDone(true), 300);
     }
 
     return () => clearTimeout(timeout);
   }, [name]);
 
-  // Then type role
   useEffect(() => {
     let timeout;
 
     if (nameDone && role.length < roleText.length) {
       timeout = setTimeout(() => {
         setRole(roleText.slice(0, role.length + 1));
-      }, 80);
+      }, 50);
     }
 
     return () => clearTimeout(timeout);
-  }, [role, nameDone]);
+  }, [nameDone, role]);
+
+  const handlePointerMove = (event) => {
+    if (!heroRef.current) return;
+
+    const bounds = heroRef.current.getBoundingClientRect();
+    const x = event.clientX - bounds.left;
+    const y = event.clientY - bounds.top;
+
+    heroRef.current.style.setProperty("--mouse-x", `${x}px`);
+    heroRef.current.style.setProperty("--mouse-y", `${y}px`);
+  };
 
   return (
     <section
+      ref={heroRef}
       id="hero"
-      className="bg-slate-950 text-white min-h-dvh flex items-center justify-center px-4"
+      onPointerMove={handlePointerMove}
+      className="orbital-hero relative flex min-h-dvh items-center justify-center overflow-hidden bg-[#050711] px-5 py-24 text-white"
     >
-      <div className="mx-auto max-w-6xl w-full">
-        <div className="rounded-[28px] border border-white/10 bg-[#0f1b3d] px-8 py-20 md:px-16 text-center">
-          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs tracking-[0.25em] text-white/70 h-[48px]">
-            <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
-            {role}
+      {/* Background */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="hero-spotlight absolute inset-0" />
+        <div className="hero-grid absolute inset-0" />
+
+        <div className="hero-glow hero-glow-left" />
+        <div className="hero-glow hero-glow-right" />
+
+        <div className="hero-orbit hero-orbit-large" />
+        <div className="hero-orbit hero-orbit-medium" />
+        <div className="hero-orbit hero-orbit-small" />
+
+        <span className="orbit-dot orbit-dot-one" />
+        <span className="orbit-dot orbit-dot-two" />
+        <span className="orbit-dot orbit-dot-three" />
+
+        {/* Ambient background words */}
+        <span className="ambient-word left-[7%] top-[20%]">REACT</span>
+        <span className="ambient-word right-[8%] top-[30%]">NODE</span>
+        <span className="ambient-word bottom-[15%] left-[16%]">DESIGN</span>
+        <span className="ambient-word bottom-[12%] right-[14%]">BUILD</span>
+      </div>
+
+      {/* Projects satellite */}
+      <a href="#all-projects" className="satellite satellite-projects group">
+        <span className="satellite-number">01</span>
+
+        <span>
+          <span className="block text-[10px] uppercase tracking-[0.22em] text-cyan-200/60">
+            Selected work
+          </span>
+
+          <span className="mt-1 block font-semibold text-white">
+            View Projects
+          </span>
+        </span>
+
+        <span className="satellite-arrow transition-transform group-hover:translate-x-1">
+          ↗
+        </span>
+      </a>
+
+      <a
+        href="/jmik-thang.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="satellite satellite-resume group"
+      >
+        <span className="satellite-number">02</span>
+
+        <span>
+          <span className="block text-[10px] uppercase tracking-[0.22em] text-violet-200/60">
+            Background
+          </span>
+
+          <span className="mt-1 block font-semibold text-white">
+            Open Resume
+          </span>
+        </span>
+
+        <span className="satellite-arrow transition-transform group-hover:translate-x-1">
+          ↗
+        </span>
+      </a>
+
+      {/* Center content */}
+      <div className="relative z-10 mx-auto max-w-4xl text-center">
+        <div className="mb-8 flex justify-center">
+          <div className="inline-flex min-h-10 items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/[0.06] px-4 py-2 text-xs font-medium tracking-[0.22em] text-cyan-200 backdrop-blur-md">
+            <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_13px_rgba(52,211,153,0.95)]" />
+            {role || "\u00A0"}
           </div>
+        </div>
 
-          <div className="relative mt-6 h-[72px] md:h-[96px]">
-            <h1 className="invisible text-4xl md:text-6xl font-semibold leading-tight">
-              {nameText}|
-            </h1>
+        <div className="relative min-h-[70px] sm:min-h-[95px]">
+          <h1 className="invisible text-5xl font-semibold leading-none tracking-[-0.05em] sm:text-7xl lg:text-8xl">
+            {nameText}
+          </h1>
 
-            <h1 className="absolute inset-0 text-4xl md:text-6xl font-semibold leading-tight">
-              {name}
-              <span className="animate-pulse">|</span>
-            </h1>
-          </div>
+          <h1 className="absolute inset-0 text-5xl font-semibold leading-none tracking-[-0.05em] sm:text-7xl lg:text-8xl">
+            {name}
+            <span className="ml-2 inline-block animate-pulse text-cyan-300">
+              |
+            </span>
+          </h1>
+        </div>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-white/65">
-            I build scalable full-stack applications with intuitive interfaces,
-            robust backend architecture, and thoughtful user experiences using
-            React, Node.js, and modern web technologies.
-          </p>
+        <p className="mx-auto mt-8 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+          I turn ideas into polished, dependable web experiences—from intuitive
+          interfaces to secure backend systems.
+        </p>
 
-          <div className="mt-8 flex justify-center">
-            <a
-              href="/jmik-thang.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-white/90"
-            >
-              View Resume
-            </a>
-          </div>
+        <div className="mt-10 flex items-center justify-center gap-3 text-xs uppercase tracking-[0.2em] text-slate-500">
+          <span className="h-px w-10 bg-gradient-to-r from-transparent to-slate-500" />
+          Scroll to explore
+          <span className="h-px w-10 bg-gradient-to-l from-transparent to-slate-500" />
         </div>
       </div>
     </section>
