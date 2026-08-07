@@ -4,10 +4,11 @@ import emergencyConnectImg from "../assets/emergency-connect.png";
 import newsExplorerImg from "../assets/news-explorer.jpeg";
 import storeXImg from "../assets/store-x.png";
 
-// ✅ Update these filenames to match your real asset names
+
 import winterVacationImg from "../assets/winter-vacation.jpg";
 import aroundTheUsImg from "../assets/aroundtheus.jpg";
 import wtwrImg from "../assets/wtwr.jpeg";
+import bookSummaryImg from "../assets/book-summary.jpeg"
 
 export const BOOTCAMP_PROJECTS = [
   {
@@ -35,6 +36,27 @@ export const BOOTCAMP_PROJECTS = [
 ];
 
 export const ALL_PROJECTS = [
+   {
+    title: "1989 Book Summaries",
+    badge: "Full-Stack Application",
+    description:
+      "A full-stack book summary platform where users can discover concise insights, browse by category, search the library, and join discussions. Includes secure authentication, personalized interactions, view tracking, and an admin dashboard for managing books.",
+    image: bookSummaryImg,
+    tech: [
+      "React",
+      "JavaScript",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "JWT Auth",
+      "REST API",
+      "Responsive Design",
+    ],
+    liveDemo: "https://book-summary-app-qn7c.onrender.com/",
+    github: "https://github.com/JMIK-THANG/book-summary-app",
+    tag: "Full Stack",
+  },
+
   {
     title: "Winter Vacation Spots",
     badge: "Front-End Project",
