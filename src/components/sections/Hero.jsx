@@ -71,7 +71,7 @@ const Hero = () => {
 
           <div className="mt-8 flex justify-center">
             <a
-              href="/JM_Thang.pdf"
+              href="/jmik-thang.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-white/90"
