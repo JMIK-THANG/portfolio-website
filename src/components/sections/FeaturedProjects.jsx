@@ -12,14 +12,14 @@ const FeaturedProjects = () => {
     >
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
-          <p className="text-sm tracking-[0.25em] text-white/60">FEATURED</p>
+          <p className="text-sm tracking-[0.25em] text-white/60">RECOGNITION & TEAMWORK</p>
 
           <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-white">
             CodeJam Awards
           </h2>
 
           <p className="mt-3 max-w-2xl mx-auto text-white/65">
-            Featured projects from team-based CodeJam competitions, recognized
+            Team projects from bootcamp CodeJam competitions, recognized
             for outstanding UI/UX design and practical, real-world
             problem-solving
           </p>

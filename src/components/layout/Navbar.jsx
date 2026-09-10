@@ -7,6 +7,16 @@ const linkBase =
   "text-white/80 hover:text-white transition-colors duration-200";
 const linkActive = "text-white";
 
+const NavItem = ({ activeId, href, id, children, onClick, className = "" }) => (
+    <a
+      href={href}
+      onClick={onClick}
+      className={`${linkBase} ${activeId === id ? linkActive : ""} ${className}`}
+    >
+      {children}
+    </a>
+  );
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [activeId, setActiveId] = useState("hero");
@@ -37,7 +47,7 @@ export default function Navbar() {
       "about-me",
       "skills",
       "education",
-      "featured-projects",
+      "all-projects",
       "contact",
     ];
 
@@ -84,15 +94,6 @@ export default function Navbar() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  const NavItem = ({ href, id, children, onClick, className = "" }) => (
-    <a
-      href={href}
-      onClick={onClick}
-      className={`${linkBase} ${activeId === id ? linkActive : ""} ${className}`}
-    >
-      {children}
-    </a>
-  );
 
   return (
     <>
@@ -113,35 +114,35 @@ export default function Navbar() {
                 alt="logo"
                 className="h-6 w-6 object-contain"
               />
-              <h1 className="text-lg md:text-xl font-semibold text-white">
+              <span className="text-lg md:text-xl font-semibold text-white">
                 Jmik Thang
-              </h1>
+              </span>
             </a>
 
             {/* Center (Desktop links) */}
             <ul className="hidden md:flex items-center justify-center gap-6 text-sm font-medium">
               <li>
-                <NavItem href="#about-me" id="about-me">
+                <NavItem activeId={activeId} href="#about-me" id="about-me">
                   About
                 </NavItem>
               </li>
               <li>
-                <NavItem href="#skills" id="skills">
+                <NavItem activeId={activeId} href="#skills" id="skills">
                   Skills
                 </NavItem>
               </li>
               <li>
-                <NavItem href="#education" id="education">
+                <NavItem activeId={activeId} href="#education" id="education">
                   Education
                 </NavItem>
               </li>
               <li>
-                <NavItem href="#featured-projects" id="featured-projects">
+                <NavItem activeId={activeId} href="#all-projects" id="all-projects">
                   Projects
                 </NavItem>
               </li>
               <li>
-                <NavItem href="#contact" id="contact">
+                <NavItem activeId={activeId} href="#contact" id="contact">
                   Contact
                 </NavItem>
               </li>
@@ -206,6 +207,7 @@ export default function Navbar() {
 
       {/* Mobile panel */}
       <div
+        inert={!open}
         className={[
           "md:hidden fixed left-0 right-0 z-[55]",
           "top-16",
@@ -241,7 +243,7 @@ export default function Navbar() {
             Education
           </a>
           <a
-            href="#featured-projects"
+            href="#all-projects"
             onClick={() => setOpen(false)}
             className="block px-4 py-3 text-base font-medium text-white/85 hover:bg-white/10 hover:text-white transition"
           >

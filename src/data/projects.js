@@ -1,3 +1,4 @@
+import chinlungImg from "../assets/chinlung-today.png";
 // src/data/projects.js
 import slowJamzImg from "../assets/slow-jamz.jpeg";
 import emergencyConnectImg from "../assets/emergency-connect.png";
@@ -5,7 +6,6 @@ import newsExplorerImg from "../assets/news-explorer.jpeg";
 import storeXImg from "../assets/store-x.png";
 
 
-import winterVacationImg from "../assets/winter-vacation.jpg";
 import aroundTheUsImg from "../assets/aroundtheus.jpg";
 import wtwrImg from "../assets/wtwr.jpeg";
 import bookSummaryImg from "../assets/book-summary.jpeg"
@@ -15,7 +15,7 @@ export const BOOTCAMP_PROJECTS = [
     title: "Lover’s Slow Jamz",
     badge: "Winner • Bootcamp CodeJam",
     description:
-      "A playlist-driven date planner with a restaurant carousel and Spotify integration—built to make planning a date night fun and effortless.",
+      "A team-built date planner combining Spotify playlists with restaurant discovery.",
     image: slowJamzImg,
     tech: ["JavaScript", "HTML/CSS", "Spotify", "UI/UX"],
     liveDemo: "https://jmik-thang.github.io/Lover-s-Slow-Jamz/",
@@ -26,7 +26,7 @@ export const BOOTCAMP_PROJECTS = [
     title: "Emergency Connect",
     badge: "Audience Award • Bootcamp CodeJam",
     description:
-      "A community-focused app for connecting people to emergency resources and safety information, designed with clarity and accessibility in mind.",
+      "A team-built resource hub helping communities find emergency support and safety information.",
     image: emergencyConnectImg,
     tech: ["JavaScript", "HTML/CSS", "Responsive Design"],
     liveDemo: "https://johnwallacegerrard.github.io/Emergency_Connect/",
@@ -36,11 +36,21 @@ export const BOOTCAMP_PROJECTS = [
 ];
 
 export const ALL_PROJECTS = [
+  {
+    title: "Chinlung Today",
+    badge: "Full-stack project · Frontend in progress",
+    description: "Community news with article pages and category browsing. React frontend in progress; backend planned.",
+    image: chinlungImg,
+    tech: ["React", "Tailwind CSS", "React Router", "Vite"],
+    liveDemo: "https://news-app-t5rb.onrender.com/",
+    github: "https://github.com/JMIK-THANG/newsapp",
+    tag: "In Progress",
+  },
    {
     title: "1989 Book Summaries",
     badge: "Full-Stack Application",
     description:
-      "A full-stack book summary platform where users can discover concise insights, browse by category, search the library, and join discussions. Includes secure authentication, personalized interactions, view tracking, and an admin dashboard for managing books.",
+      "Discover book insights, join discussions, and manage a personal account—with an admin dashboard for content.",
     image: bookSummaryImg,
     tech: [
       "React",
@@ -57,22 +67,12 @@ export const ALL_PROJECTS = [
     tag: "Full Stack",
   },
 
-  {
-    title: "Winter Vacation Spots",
-    badge: "Front-End Project",
-    description:
-      "A responsive site that showcases winter travel destinations with clean layout and interactive UI.",
-    image: winterVacationImg,
-    tech: ["HTML", "CSS", "JavaScript", "Responsive UI"],
-    liveDemo: "https://jmik-thang.github.io/winter-vacation-spots/",
-    github: "https://github.com/JMIK-THANG/winter-vacation-spots",
-    tag: "Project",
-  },
+
   {
     title: "Around The US",
     badge: "React Project",
     description:
-      "A React-based profile and photo gallery app with structured components and modern UI patterns.",
+      "A responsive React photo gallery with editable profiles and reusable interface components.",
     image: aroundTheUsImg,
     tech: ["React", "JavaScript", "CSS", "Responsive Design"],
     liveDemo: "https://jmik-thang.github.io/se_project_aroundtheus/",
@@ -83,7 +83,7 @@ export const ALL_PROJECTS = [
     title: "WTWR (What to Wear?)",
     badge: "Full-Stack Application",
     description:
-      "A full-stack weather-based clothing application that provides real-time outfit recommendations. Built with React and a RESTful Node.js/Express backend, featuring user authentication, profile management, and interactive clothing item CRUD with likes functionality.",
+      "Weather-based clothing suggestions with authentication, personal wardrobes, and item likes.",
     image: wtwrImg,
     tech: [
       "React",
@@ -102,7 +102,7 @@ export const ALL_PROJECTS = [
     title: "News Explorer",
     badge: "Full-Stack Application",
     description:
-      "A news search application that allows users to find and save articles based on keywords. Built with React and a Node.js/Express backend, featuring authentication, protected routes, and saved articles functionality.",
+      "Search news by keyword and save articles to a personal collection with protected accounts.",
     image: newsExplorerImg,
     tech: [
       "React",
@@ -122,7 +122,7 @@ export const ALL_PROJECTS = [
     title: "Store X",
     badge: "Full-Stack E-Commerce App",
     description:
-      "A full-stack e-commerce website with product browsing, category filtering, search, cart functionality, and a clean responsive UI. Built with React, Tailwind CSS, Node.js, Express, and PostgreSQL.",
+      "An online store with product discovery, category filters, and a shopping cart, backed by PostgreSQL.",
     image: storeXImg,
     tech: [
       "React",
