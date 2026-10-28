@@ -1,40 +1,28 @@
+import { useState } from "react";
+import { ArrowDown, ArrowUp } from "lucide-react";
 import { ALL_PROJECTS } from "@/data/projects";
 import ProjectCard from "../cards/ProjectCard";
 
-const AllProjects = () => {
+const selectedTitles = ["1989 Book Summaries", "Store X", "Chinlung Today"];
+const selected = selectedTitles.map(title => ALL_PROJECTS.find(project => project.title === title));
+const more = ALL_PROJECTS.filter(project => !selectedTitles.includes(project.title));
+
+export default function AllProjects() {
+  const [expanded, setExpanded] = useState(false);
   return (
-    <section
-      id="all-projects"
-      className="bg-zinc-950 px-4 py-20 text-white"
-    >
-      <div className="mx-auto max-w-6xl">
-        <div className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">
-            01 / SELECTED WORK
-          </p>
-
-          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-            Ideas turned into applications.
-          </h2>
-
-          <p className="mx-auto mt-4 max-w-2xl text-white/65">
-            Recent builds, ongoing experiments, and the projects that shaped how I work.
-          </p>
+    <section id="all-projects" className="selected-section" aria-labelledby="selected-title">
+      <div className="selected-shell">
+        <div className="selected-heading"><h2 id="selected-title">Selected Projects</h2><p>A selection of recent work.</p></div>
+        <div className="selected-grid">{selected.map(project => <ProjectCard key={project.title} {...project} />)}</div>
+        <div id="more-projects" hidden={!expanded} className="selected-more">
+          <h3>More projects</h3>
+          <div className="selected-grid">{more.map(project => <ProjectCard key={project.title} {...project} />)}</div>
         </div>
-
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {ALL_PROJECTS.map((project) => (
-            <ProjectCard
-              key={project.title}
-              {...project}
-              variant="all"
-              showAward={false}
-            />
-          ))}
-        </div>
+        <button type="button" className="selected-toggle" aria-expanded={expanded} aria-controls="more-projects" onClick={() => setExpanded(value => !value)}>
+          {expanded ? "Show fewer projects" : "View all projects"}
+          {expanded ? <ArrowUp size={16} /> : <ArrowDown size={16} />}
+        </button>
       </div>
     </section>
   );
-};
-
-export default AllProjects;
+}

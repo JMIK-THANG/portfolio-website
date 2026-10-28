@@ -11,7 +11,7 @@ export default function ProjectCard({ title, badge, description, image, tech = [
         <ul className="project-tile-tech" aria-label="Technologies">{tech.slice(0, 3).map(t => <li key={t}>{t}</li>)}</ul>
         <div className="project-tile-links">
           {liveDemo && <a href={liveDemo} target="_blank" rel="noreferrer" aria-label={"Live demo of " + title}>Live demo <ArrowUpRight size={15} /></a>}
-          {github && <a href={github} target="_blank" rel="noreferrer" aria-label={"GitHub source for " + title}>Source <Github size={15} /></a>}
+          {github && <a href={github} target="_blank" rel="noreferrer" aria-label={"GitHub source for " + title}>GitHub <Github size={15} /></a>}
         </div>
       </div>
     </article>
