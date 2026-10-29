@@ -266,3 +266,24 @@ a:focus-visible, button:focus-visible { outline: 2px solid #7be7ce; outline-offs
 .selected-toggle:hover { background:#ffffff08; }
 @media(max-width:900px) { .personal-hero-layout { gap:35px; } .personal-intro h1 { font-size:50px; } .personal-actions a { padding:12px 14px; gap:10px; } .selected-grid { gap:16px; } }
 @media(max-width:700px) { .personal-hero { padding:48px 22px; } .personal-hero-layout { grid-template-columns:1fr; gap:42px; } .personal-intro h1 { font-size:clamp(44px,10vw,60px); } .personal-description { font-size:15px; } .personal-feature { max-width:540px; } #all-projects.selected-section { padding:0 22px 48px; } .selected-heading { align-items:flex-start; flex-direction:column; gap:8px; } .selected-grid { grid-template-columns:1fr; gap:22px; } }
+
+/* About: personal story and original portrait */
+.personal-about { padding:84px 28px 56px; background:#0b1219; color:#edf3f1; }
+.personal-about-shell { max-width:1144px; margin:auto; }
+.personal-about-layout { display:grid; grid-template-columns:minmax(0,1.65fr) minmax(0,1fr); gap:88px; align-items:start; }
+.personal-about-copy .personal-about-label { font-size:10px; letter-spacing:.17em; color:#a2e6d2; margin:0 0 24px; }
+.personal-about-copy h2 { font-size:clamp(34px,4vw,48px); line-height:1.15; letter-spacing:-.04em; font-weight:500; margin:0 0 30px; }
+.personal-about-copy > p { color:#acbdc6; font-size:15px; line-height:1.85; margin:0 0 21px; max-width:650px; }
+.personal-about-copy .personal-about-lead { color:#e2eae7; font-size:19px; line-height:1.65; margin-bottom:24px; }
+.personal-about-contact { display:inline-flex; align-items:center; gap:9px; color:#a2e6d2; font-size:15px; padding:8px 0; margin-top:2px; }
+.personal-about-contact:hover { color:#d6fff0; }
+.personal-about-portrait { margin:30px 0 0; }
+.personal-about-portrait img { display:block; width:100%; aspect-ratio:4 / 5; object-fit:cover; object-position:center; border-radius:9px; }
+.personal-about-portrait figcaption { display:flex; flex-direction:column; gap:8px; margin-top:20px; }
+.personal-about-portrait figcaption span:first-child { font-size:19px; font-weight:500; }
+.personal-about-portrait figcaption span:last-child { font-size:13px; color:#9fb1bc; }
+.personal-about-approach { display:flex; justify-content:space-between; align-items:baseline; gap:24px; border-top:1px solid #ffffff1a; padding-top:28px; margin-top:44px; }
+.personal-about-approach p:first-child { font-size:10px; letter-spacing:.14em; color:#9fb1bc; }
+.personal-about-approach p:last-child { font-size:15px; line-height:1.7; color:#dce7e2; }
+@media(max-width:900px) { .personal-about-layout { gap:40px; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); } }
+@media(max-width:700px) { .personal-about { padding:54px 22px 40px; } .personal-about-layout { grid-template-columns:1fr; gap:32px; } .personal-about-portrait { margin:0; width:min(100%,340px); } .personal-about-copy h2 { font-size:36px; } .personal-about-approach { flex-direction:column; gap:12px; margin-top:32px; } }
